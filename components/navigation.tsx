@@ -20,111 +20,182 @@ export function Navigation() {
 
   return (
     <>
-      {/* Desktop Layout - Hidden below xl */}
-      <div className="fixed inset-0 pointer-events-none z-40 hidden xl:block">
-        {/* Left Sidebar */}
-        <div className="absolute left-0 top-0 w-56 xl:w-64 h-screen bg-background border-r-2 border-foreground pointer-events-auto p-6 xl:p-8 flex flex-col justify-between overflow-y-auto animate-slide-in-left">
-          <div className="space-y-6">
-            <Link href="/" className="group block">
-              <h1 className="text-2xl xl:text-3xl font-black leading-tight transition-all duration-300 group-hover:opacity-60">
-                FIKRI<br />JULIAN<br />CO.
-              </h1>
-            </Link>
-            <div className="space-y-2 text-xs">
-              <p className="font-bold">Fullstack Developer</p>
-              <p className="text-muted-foreground">Yogyakarta, Indonesia</p>
-              <p className="text-accent font-bold">Available Now</p>
-            </div>
-          </div>
+      {/* DESKTOP LAYOUT (XL and above - 1280px+) */}
+      <div className="hidden xl:block fixed inset-0 pointer-events-none z-40">
+        {/* Top Left - Logo */}
+        <div className="absolute left-8 top-8 pointer-events-auto">
+          <Link href="/" className="group block">
+            <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-black leading-tight transition-opacity duration-300 group-hover:opacity-60">
+              FIKRI<br />JULIAN<br />CO.
+            </h1>
+          </Link>
+        </div>
 
-          <div className="space-y-3 text-xs">
-            <a href="mailto:jfikri212@gmail.com" className="link-hover hover:text-accent block break-all">
+        {/* Bottom Left - Info */}
+        <div className="absolute left-8 bottom-8 space-y-4 text-xs xl:text-sm pointer-events-auto max-w-xs">
+          <div className="space-y-2">
+            <p className="font-bold">Studio of Fikri Julian</p>
+            <p className="text-muted-foreground">Fullstack Developer</p>
+          </div>
+          <div className="space-y-1">
+            <p className="text-muted-foreground">Yogyakarta, Indonesia</p>
+            <a href="mailto:jfikri212@gmail.com" className="hover:text-accent transition-colors block">
               jfikri212@gmail.com
             </a>
-            <p className="text-muted-foreground text-xs leading-relaxed">
-              Creating bold digital experiences with code and design.
-            </p>
           </div>
         </div>
 
-        {/* Center Navigation */}
-        <nav className="absolute left-1/2 top-12 -translate-x-1/2 flex gap-8 xl:gap-12 pointer-events-auto animate-fade-in-up">
+        {/* Top Center - Main Navigation */}
+        <nav className="absolute left-1/2 top-8 -translate-x-1/2 flex gap-8 xl:gap-12 2xl:gap-16 pointer-events-auto">
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
-              className={`text-xs font-black uppercase tracking-wider transition-all duration-300 ${
-                isActive(item.path)
-                  ? 'text-accent'
-                  : 'hover:text-accent'
+              className={`text-xs xl:text-sm font-black uppercase tracking-wider transition-colors duration-300 ${
+                isActive(item.path) ? 'text-accent' : 'hover:text-accent'
               }`}
             >
-              {item.number} <span className="ml-2">{item.label}</span>
+              <span className="text-muted-foreground">{item.number}</span> {item.label}
             </Link>
           ))}
         </nav>
 
-        {/* Right Sidebar */}
-        <div className="absolute right-0 top-0 w-32 xl:w-40 h-screen bg-background border-l-2 border-foreground pointer-events-auto p-6 xl:p-8 flex flex-col items-center justify-center animate-slide-in-right">
-          <div className="space-y-6 text-center">
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-hover text-xs font-bold uppercase tracking-wider hover:text-accent block"
-            >
-              Twitter
-            </a>
-            <a
-              href="https://github.com/julian-21"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-hover text-xs font-bold uppercase tracking-wider hover:text-accent block"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/fikri-julian-febrianto-69a185253/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-hover text-xs font-bold uppercase tracking-wider hover:text-accent block"
-            >
-              LinkedIn
-            </a>
+        {/* Right Middle - Social Links */}
+        <div className="absolute right-8 top-1/2 -translate-y-1/2 space-y-6 xl:space-y-8 pointer-events-auto">
+          <a
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
+          >
+            <span className="text-muted-foreground text-[10px]">03</span><br />
+            Twitter
+          </a>
+          <a
+            href="https://github.com/julian-21"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
+          >
+            <span className="text-muted-foreground text-[10px]">04</span><br />
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/fikri-julian-febrianto-69a185253/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
+          >
+            <span className="text-muted-foreground text-[10px]">05</span><br />
+            LinkedIn
+          </a>
+        </div>
+
+        {/* Bottom Right - Credit */}
+        <div className="absolute right-8 bottom-8 text-right pointer-events-auto">
+          <div className="space-y-1 text-xs xl:text-sm">
+            <p className="font-bold uppercase tracking-wider">Design</p>
+            <p className="font-bold uppercase tracking-wider">Femt</p>
           </div>
         </div>
       </div>
 
-      {/* Tablet/Mobile Header */}
-      <div className="xl:hidden fixed top-0 left-0 right-0 h-16 bg-background border-b-2 border-foreground z-50 flex items-center justify-between px-4 sm:px-6 animate-fade-in-up">
-        <Link href="/" className="text-sm sm:text-base font-black uppercase tracking-wider hover:text-accent transition-colors">
-          FIKRI JULIAN
-        </Link>
-        
-        {/* Desktop-style nav for tablet (lg) */}
-        <nav className="hidden lg:flex gap-6">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              className={`text-xs font-black uppercase tracking-wider transition-all duration-300 ${
-                isActive(item.path)
-                  ? 'text-accent'
-                  : 'hover:text-accent'
-              }`}
-            >
-              {item.number} {item.label}
+      {/* TABLET LAYOUT (MD to LG - 768px to 1279px) */}
+      <div className="hidden md:block xl:hidden fixed inset-0 pointer-events-none z-40">
+        {/* Top Bar - Transparent */}
+        <div className="absolute top-0 left-0 right-0 h-24 pointer-events-auto">
+          <div className="h-full px-6 lg:px-8 flex items-center justify-between">
+            {/* Logo */}
+            <Link href="/" className="group block">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-black leading-[0.9] transition-opacity duration-300 group-hover:opacity-60">
+                FIKRI<br />JULIAN<br />CO.
+              </h1>
             </Link>
-          ))}
-        </nav>
 
-        {/* Hamburger menu for mobile/tablet */}
+            {/* Navigation */}
+            <nav className="flex gap-6 lg:gap-8">
+              {navItems.map((item) => (
+                <Link
+                  key={item.path}
+                  href={item.path}
+                  className={`text-xs lg:text-sm font-black uppercase tracking-wider transition-all duration-300 hover:scale-110 ${
+                    isActive(item.path) ? 'text-accent' : 'hover:text-accent'
+                  }`}
+                >
+                  <span className="text-muted-foreground hidden lg:inline">{item.number} </span>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+
+        {/* Bottom Info Bar - Transparent */}
+        <div className="absolute bottom-0 left-0 right-0 pointer-events-auto">
+          <div className="px-6 lg:px-8 py-5 flex flex-wrap items-center justify-between gap-4 text-xs lg:text-sm">
+            {/* Left Side - Info */}
+            <div className="flex gap-6 lg:gap-8 items-center">
+              <div className="flex gap-2 items-center">
+                <span className="text-muted-foreground">—</span>
+                <p className="font-bold">Fikri Julian</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="text-muted-foreground">—</span>
+                <p className="text-muted-foreground">Fullstack Developer</p>
+              </div>
+              <div className="flex gap-2 items-center">
+                <span className="text-muted-foreground">—</span>
+                <a href="mailto:jfikri212@gmail.com" className="hover:text-accent transition-colors">
+                  Contact
+                </a>
+              </div>
+            </div>
+
+            {/* Right Side - Social Links */}
+            <div className="flex gap-5 lg:gap-7 items-center">
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:scale-110"
+              >
+                TW
+              </a>
+              <a
+                href="https://github.com/julian-21"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:scale-110"
+              >
+                GH
+              </a>
+              <a
+                href="https://www.linkedin.com/in/fikri-julian-febrianto-69a185253/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:scale-110"
+              >
+                LI
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* MOBILE LAYOUT (SM and below - under 768px) */}
+      <div className="md:hidden fixed top-0 left-0 right-0 h-20 sm:h-24 z-50 flex items-center justify-between px-5 sm:px-6">
+        {/* Logo */}
+        <Link href="/" className="text-base sm:text-lg font-black leading-[0.9] hover:text-accent transition-colors">
+          FIKRI<br />JULIAN
+        </Link>
+
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 z-50 transition-transform duration-300 hover:scale-110"
+          className="p-2 transition-transform duration-300 hover:scale-110 active:scale-95 relative z-50"
           aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {mobileMenuOpen ? <X size={28} className="sm:w-8 sm:h-8" /> : <Menu size={28} className="sm:w-8 sm:h-8" />}
         </button>
       </div>
 
@@ -133,74 +204,102 @@ export function Navigation() {
         <>
           {/* Backdrop */}
           <div 
-            className="lg:hidden fixed inset-0 bg-black/50 z-40 animate-fade-in"
+            className="md:hidden fixed inset-0 bg-background z-40"
             onClick={() => setMobileMenuOpen(false)}
           />
           
-          {/* Menu Panel */}
-          <div className="lg:hidden fixed top-16 left-0 right-0 bottom-0 bg-background z-40 py-6 px-4 sm:px-6 animate-slide-down overflow-y-auto">
-            <nav className="space-y-4 mb-6 pb-6 border-b-2 border-foreground">
-              {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`block text-base sm:text-lg font-black uppercase tracking-wider transition-all duration-300 ${
-                    isActive(item.path)
-                      ? 'text-accent'
-                      : 'hover:text-accent hover:translate-x-2'
-                  }`}
-                >
-                  {item.number} {item.label}
-                </Link>
-              ))}
-            </nav>
+          {/* Menu Content */}
+          <div className="md:hidden fixed inset-0 z-40 flex items-center justify-center overflow-hidden">
+            <div className="w-full h-full flex flex-col items-center justify-center p-6 sm:p-8">
+              <div className="w-full max-w-lg space-y-10 sm:space-y-16">
+                {/* Nav Links */}
+                <nav className="space-y-2 sm:space-y-3">
+                  {navItems.map((item, index) => (
+                    <Link
+                      key={item.path}
+                      href={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`group block text-5xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter leading-none transition-all duration-500 ${
+                        isActive(item.path) 
+                          ? 'text-accent' 
+                          : 'hover:text-accent'
+                      }`}
+                      style={{
+                        transitionDelay: `${index * 50}ms`
+                      }}
+                    >
+                      <div className="flex items-baseline gap-3 sm:gap-4 group-hover:translate-x-4 transition-transform duration-300">
+                        <span className="text-xs sm:text-sm text-muted-foreground font-bold">
+                          {item.number}
+                        </span>
+                        <span>{item.label}</span>
+                      </div>
+                    </Link>
+                  ))}
+                </nav>
 
-            <div className="space-y-4 text-sm sm:text-base pb-6 border-b-2 border-foreground">
-              <div className="space-y-1">
-                <p className="font-bold">Fikri Julian</p>
-                <p className="text-muted-foreground">Fullstack Developer</p>
-                <p className="text-muted-foreground">Yogyakarta, Indonesia</p>
-                <p className="text-accent font-bold text-sm">Available Now</p>
+                {/* Divider */}
+                <div className="w-full h-px bg-foreground/20"></div>
+
+                {/* Info Section */}
+                <div className="space-y-3 text-sm sm:text-base">
+                  <div className="flex items-center gap-3 opacity-60">
+                    <span className="text-muted-foreground">—</span>
+                    <p className="font-bold uppercase tracking-wider">Fikri Julian</p>
+                  </div>
+                  <div className="flex items-center gap-3 opacity-60">
+                    <span className="text-muted-foreground">—</span>
+                    <p className="text-muted-foreground">Fullstack Developer</p>
+                  </div>
+                  <div className="flex items-center gap-3 opacity-60">
+                    <span className="text-muted-foreground">—</span>
+                    <p className="text-muted-foreground">Yogyakarta, Indonesia</p>
+                  </div>
+                </div>
+
+                {/* Contact & Social */}
+                <div className="space-y-4">
+                  <a 
+                    href="mailto:jfikri212@gmail.com" 
+                    className="block text-sm sm:text-base font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:translate-x-2"
+                  >
+                    → Email Me
+                  </a>
+                  
+                  <div className="flex gap-5 sm:gap-6 text-sm sm:text-base">
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-accent font-bold uppercase tracking-wider transition-all duration-300 hover:scale-110"
+                    >
+                      Twitter
+                    </a>
+                    <a
+                      href="https://github.com/julian-21"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-accent font-bold uppercase tracking-wider transition-all duration-300 hover:scale-110"
+                    >
+                      GitHub
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/fikri-julian-febrianto-69a185253/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-accent font-bold uppercase tracking-wider transition-all duration-300 hover:scale-110"
+                    >
+                      LinkedIn
+                    </a>
+                  </div>
+                </div>
               </div>
-              <a 
-                href="mailto:jfikri212@gmail.com" 
-                className="link-hover hover:text-accent block break-all"
-              >
-                jfikri212@gmail.com
-              </a>
-            </div>
 
-            <div className="space-y-3 text-sm pt-6">
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-hover hover:text-accent font-bold uppercase tracking-wider block transition-all hover:translate-x-2"
-              >
-                → Twitter
-              </a>
-              <a
-                href="https://github.com/julian-21"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-hover hover:text-accent font-bold uppercase tracking-wider block transition-all hover:translate-x-2"
-              >
-                → GitHub
-              </a>
-              <a
-                href="https://www.linkedin.com/in/fikri-julian-febrianto-69a185253/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-hover hover:text-accent font-bold uppercase tracking-wider block transition-all hover:translate-x-2"
-              >
-                → LinkedIn
-              </a>
+              {/* Bottom Credit */}
+              <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 text-center">
+                <p className="text-xs sm:text-sm text-muted-foreground">Design by Femt</p>
+              </div>
             </div>
-
-            <p className="text-muted-foreground text-xs sm:text-sm leading-relaxed mt-6 pt-6 border-t-2 border-foreground">
-              Creating bold digital experiences with code and design.
-            </p>
           </div>
         </>
       )}
