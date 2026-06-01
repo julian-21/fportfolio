@@ -8,9 +8,9 @@ export default function ProjectsPage() {
   const projects = [
     {
       title: 'ERP System Rumah Mesin',
-      description: 'Pengembangan sistem Enterprise Resource Planning (ERP) terintegrasi untuk modul Sales, PPIC, dan HR.',
-      fullDescription: 'Proyek pengembangan sistem ERP komprehensif yang disesuaikan dengan alur kerja operasional Rumah Mesin. Menghubungkan proses operasional penjualan (Sales), perencanaan produksi dan kontrol inventaris (PPIC), serta manajemen sumber daya manusia (HR) ke dalam satu platform digital terpadu.',
-      image: '/erp-system-development.jpg',
+      description: 'Integrated ERP system development for Sales, PPIC, and HR modules.',
+      fullDescription: 'A comprehensive ERP system development project tailored to Rumah Mesin\'s operational workflows. It connects sales operations, production planning and inventory control (PPIC), and human resource management (HR) into a unified digital platform.',
+      image: null,
       tags: ['Laravel', 'React', 'MySQL', 'ERP', 'System Development'],
       year: 'Feb 2026 - Present',
       link: null,
