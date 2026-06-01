@@ -13,7 +13,7 @@ export default function ProjectsPage() {
       image: '/virtue-one-laravel-web-application.jpg',
       tags: ['PHP', 'Laravel', 'MySQL', 'Bootstrap', 'Web Development'],
       year: 'Sep - Des 2023',
-      link: 'https://virtuone.kanreg1bkn.id/',
+      link: 'https://virtuone.kupjogja.id/',
       company: 'Kantor Regional I BKN - Badan Kepegawaian Negara RI',
       features: [
         'Sistem pendaftaran online untuk konsultasi dan coaching clinic',

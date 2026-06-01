@@ -115,7 +115,7 @@ export default function HomePage() {
         {/* Transparent Footer */}
         <div className="fixed bottom-0 left-0 right-0 py-6 px-8 pointer-events-none">
           <div className="flex justify-center text-xs text-muted-foreground pointer-events-auto">
-            <p>© 2024 — Remotely, Yogyakarta</p>
+            <p>© 2026 — Remotely, Yogyakarta</p>
           </div>
         </div>
       </div>
@@ -206,7 +206,7 @@ export default function HomePage() {
         {/* Transparent Footer */}
         <div className="fixed bottom-0 left-0 right-0 py-5 px-6">
           <div className="flex justify-center text-[0.65rem] md:text-xs text-muted-foreground">
-            <p>© 2024 — Remotely, Yogyakarta</p>
+            <p>© 2026 — Remotely, Yogyakarta</p>
           </div>
         </div>
       </div>
@@ -301,7 +301,7 @@ export default function HomePage() {
         {/* Transparent Footer */}
         <div className="fixed bottom-0 left-0 right-0 py-4 px-4">
           <div className="flex justify-center text-[0.6rem] sm:text-[0.65rem] text-muted-foreground">
-            <p>© 2024 — Remotely, Yogyakarta</p>
+            <p>© 2026 — Remotely, Yogyakarta</p>
           </div>
         </div>
       </div>
