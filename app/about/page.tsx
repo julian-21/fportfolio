@@ -76,14 +76,14 @@ export default function AboutPage() {
               {/* Profile Image wrapped in 3D TiltedCard */}
               <ScrollReveal delay={0.3} yOffset={20} className="md:col-span-5 max-w-sm mx-auto md:mx-0 w-full">
                 <TiltedCard maxRotation={15} scaleOnHover={1.05} className="shadow-2xl">
-                  <div className="relative overflow-hidden aspect-[3/4] bg-card/20 border-2 border-foreground/30 rounded-lg group">
+                  <div className="relative overflow-hidden aspect-[3/4] bg-foreground/5 border-2 border-foreground/30 rounded-lg group">
                     <img 
-                      src="/julian-portrait.jpg" 
+                      src="/julian-portrait.png" 
                       alt="Fikri Julian Portrait" 
                       className="w-full h-full object-cover filter contrast-[1.05] brightness-[1.02]"
                     />
                     {/* Subtle shading overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
                   </div>
                 </TiltedCard>
               </ScrollReveal>

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
 import './globals.css'
+import { ClickSpark } from '@/components/react-bits/ClickSpark'
 
 const geist = Geist({ subsets: ['latin'] })
 
@@ -18,6 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body className={`${geist.className} relative min-h-screen overflow-x-hidden`}>
+        {/* Click Spark Particles Layer */}
+        <ClickSpark />
+
         {/* Ambient Glowing Orbs Background */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
           <div className="absolute top-[10%] left-[5%] w-[45vw] h-[45vw] rounded-full bg-accent/5 blur-[120px] animate-float-orb-1"></div>
