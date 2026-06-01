@@ -13,8 +13,8 @@ interface TiltedCardProps {
 export function TiltedCard({
   children,
   className = '',
-  maxRotation = 12,
-  scaleOnHover = 1.02,
+  maxRotation = 7,
+  scaleOnHover = 1.015,
 }: TiltedCardProps) {
   const ref = useRef<HTMLDivElement>(null)
   

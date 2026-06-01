@@ -8,6 +8,7 @@ import { SpotlightCard } from '@/components/react-bits/SpotlightCard'
 import { Particles } from '@/components/react-bits/Particles'
 import { ScrollReveal } from '@/components/react-bits/ScrollReveal'
 import { TiltedCard } from '@/components/react-bits/TiltedCard'
+import { ProfileCard } from '@/components/react-bits/ProfileCard'
 
 export default function AboutPage() {
   const skills = {
@@ -73,19 +74,24 @@ export default function AboutPage() {
                 </p>
               </ScrollReveal>
               
-              {/* Profile Image wrapped in 3D TiltedCard */}
-              <ScrollReveal delay={0.3} yOffset={20} className="md:col-span-5 max-w-sm mx-auto md:mx-0 w-full">
-                <TiltedCard maxRotation={15} scaleOnHover={1.05} className="shadow-2xl">
-                  <div className="relative overflow-hidden aspect-[3/4] bg-foreground/5 border-2 border-foreground/30 rounded-lg group">
-                    <img 
-                      src="/julian-portrait.png" 
-                      alt="Fikri Julian Portrait" 
-                      className="w-full h-full object-cover filter contrast-[1.05] brightness-[1.02]"
-                    />
-                    {/* Subtle shading overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none" />
-                  </div>
-                </TiltedCard>
+              {/* Profile Card wrapped in ScrollReveal */}
+              <ScrollReveal delay={0.3} yOffset={20} className="md:col-span-5 w-full flex justify-center md:justify-start">
+                <ProfileCard
+                  name="Fikri Julian"
+                  title="Fullstack Developer"
+                  handle="julian-21"
+                  status="Available"
+                  contactText="Contact Me"
+                  avatarUrl="/julian-portrait.png"
+                  showUserInfo={true}
+                  enableTilt={true}
+                  enableMobileTilt={false}
+                  onContactClick={() => window.location.href = '/contact'}
+                  behindGlowColor="rgba(255, 204, 0, 0.4)"
+                  iconUrl="/placeholder-logo.svg"
+                  behindGlowEnabled={true}
+                  innerGradient="linear-gradient(145deg, #a0002a 0%, #ffcc0033 100%)"
+                />
               </ScrollReveal>
             </div>
           </section>

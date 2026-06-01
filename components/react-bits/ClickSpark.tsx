@@ -42,18 +42,17 @@ export function ClickSpark() {
     let sparks: Spark[] = []
 
     const createSparks = (x: number, y: number) => {
-      const count = 10 + Math.floor(Math.random() * 6)
+      const count = 5 + Math.floor(Math.random() * 4) // Reduced count (5-8 sparks)
       for (let i = 0; i < count; i++) {
         const angle = Math.random() * Math.PI * 2
-        const speed = 1.2 + Math.random() * 2
+        const speed = 1.0 + Math.random() * 1.5 // Slower speed
         sparks.push({
           x,
           y,
           vx: Math.cos(angle) * speed,
           vy: Math.sin(angle) * speed,
-          size: 1.5 + Math.random() * 2,
+          size: 1.0 + Math.random() * 1.0, // Smaller sparks (1.0 - 2.0px)
           alpha: 1,
-          // Spark color matching Julian's gold accent #ffcc00
           color: '255, 204, 0'
         })
       }
@@ -73,11 +72,11 @@ export function ClickSpark() {
       sparks.forEach((s, idx) => {
         s.x += s.vx
         s.y += s.vy
-        s.vy += 0.045 // Gravity vector pull
-        s.alpha -= 0.025 // Decay factor
-        s.size *= 0.965 // Size decay
+        s.vy += 0.05 // Gravity vector pull
+        s.alpha -= 0.045 // Fades out much faster for a snappy feel
+        s.size *= 0.95 // Size decay
 
-        if (s.alpha <= 0 || s.size <= 0.25) {
+        if (s.alpha <= 0 || s.size <= 0.2) {
           sparks.splice(idx, 1)
           return
         }
