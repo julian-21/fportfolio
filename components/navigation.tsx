@@ -94,8 +94,8 @@ export function Navigation() {
         {/* Bottom Right - Credit */}
         <div className="absolute right-8 bottom-8 text-right pointer-events-auto">
           <div className="space-y-1 text-xs xl:text-sm">
-            <p className="font-bold uppercase tracking-wider">Design</p>
-            <p className="font-bold uppercase tracking-wider">Femt</p>
+            <p className="font-bold uppercase tracking-wider">Code By</p>
+            <p className="font-bold uppercase tracking-wider">Julian</p>
           </div>
         </div>
       </div>
@@ -297,7 +297,7 @@ export function Navigation() {
 
               {/* Bottom Credit */}
               <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 text-center">
-                <p className="text-xs sm:text-sm text-muted-foreground">Design by Femt</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">Developed by Fikri Julian</p>
               </div>
             </div>
           </div>
