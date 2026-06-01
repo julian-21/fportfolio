@@ -121,10 +121,8 @@ export default function HomePage() {
       </div>
 
       {/* TABLET LAYOUT (MD to LG) */}
-      <div className="hidden md:block xl:hidden min-h-screen">
-        <div className="min-h-screen flex items-center justify-end pr-12 md:pr-20 lg:pr-28 pl-12 md:pl-20">
-          <div className="max-w-3xl lg:max-w-4xl w-full">
-            <div className="relative">
+      <div className="hidden md:block xl:hidden min-h-screen pt-28 pb-32 px-12 md:px-20 lg:px-28">
+        <div className="max-w-3xl lg:max-w-4xl w-full mx-auto relative">
               {/* Giant Background Text for Tablet */}
               <div className="absolute -left-32 md:-left-48 lg:-left-56 top-1/2 -translate-y-1/2 pointer-events-none select-none">
                 <h2 className="text-[22vw] font-black leading-none text-foreground/5 whitespace-nowrap tracking-tighter">
@@ -200,8 +198,6 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
         {/* Transparent Footer */}
         <div className="fixed bottom-0 left-0 right-0 py-5 px-6">
@@ -212,10 +208,8 @@ export default function HomePage() {
       </div>
 
       {/* MOBILE LAYOUT (SM and below) */}
-      <div className="md:hidden min-h-screen">
-        <div className="min-h-screen flex items-center justify-end pr-6 sm:pr-8 pl-6 sm:pl-8">
-          <div className="w-full max-w-lg">
-            <div className="relative">
+      <div className="md:hidden min-h-screen pt-24 pb-28 px-6 sm:px-8">
+        <div className="w-full max-w-lg mx-auto relative">
               {/* Giant Background Text for Mobile */}
               <div className="absolute -left-20 sm:-left-28 top-1/2 -translate-y-1/2 pointer-events-none select-none">
                 <h2 className="text-[28vw] sm:text-[26vw] font-black leading-none text-foreground/5 whitespace-nowrap tracking-tighter">
@@ -295,8 +289,6 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
         {/* Transparent Footer */}
         <div className="fixed bottom-0 left-0 right-0 py-4 px-4">
