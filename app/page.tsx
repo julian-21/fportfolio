@@ -7,7 +7,6 @@ import { Magnet } from '@/components/react-bits/Magnet'
 import { ShinyText } from '@/components/react-bits/ShinyText'
 import { Particles } from '@/components/react-bits/Particles'
 import { ScrollReveal } from '@/components/react-bits/ScrollReveal'
-import ProfileCard from '@/components/ProfileCard'
 
 export default function HomePage() {
   const projects = [
@@ -44,9 +43,7 @@ export default function HomePage() {
 
       <Navigation />
 
-      {/* ============================================= */}
-      {/* DESKTOP LAYOUT (XL and above - 1280px+)       */}
-      {/* ============================================= */}
+      {/* DESKTOP LAYOUT (XL and above) */}
       <div className="hidden xl:block min-h-screen">
         {/* Giant Background Text - Y.O.L.O */}
         <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none z-0">
@@ -61,43 +58,18 @@ export default function HomePage() {
 
               {/* Main Content */}
               <div className="relative z-10 space-y-16 text-right" dir="rtl">
-                {/* Hero Section with ProfileCard */}
+                {/* Hero Section */}
                 <div className="space-y-8 mb-32 mt-20">
-                  {/* ProfileCard + Hero Text row */}
-                  <div className="flex items-center justify-end gap-16" dir="ltr">
-                    {/* ProfileCard on the left */}
-                    <ScrollReveal delay={0.5} yOffset={25} className="flex-shrink-0 hidden 2xl:block">
-                      <ProfileCard
-                        name="Fikri Julian"
-                        title="Fullstack Developer"
-                        handle="julian-21"
-                        status="Available"
-                        contactText="Contact Me"
-                        avatarUrl="/julian-portrait.png"
-                        showUserInfo={false}
-                        enableTilt={true}
-                        enableMobileTilt={false}
-                        onContactClick={() => window.location.href = '/contact'}
-                        behindGlowColor="rgba(255, 204, 0, 0.4)"
-                        iconUrl="/fikri-julian-co-logo.svg"
-                        behindGlowEnabled={true}
-                        innerGradient="linear-gradient(145deg, #a0002a 0%, #ffcc0022 100%)"
-                      />
-                    </ScrollReveal>
+                  <h3 className="text-7xl xl:text-8xl 2xl:text-9xl font-black leading-[0.85] tracking-tighter text-right" dir="ltr">
+                    <SplitText text="IS" delay={0.1} />
+                    <br />
+                    <span className="text-muted-foreground">
+                      <SplitText text="THIS" delay={0.2} />
+                    </span>
+                    <br />
+                    <SplitText text="?JULIAN" delay={0.3} />
+                  </h3>
 
-                    {/* Hero Typography */}
-                    <h3 className="text-7xl xl:text-8xl 2xl:text-9xl font-black leading-[0.85] tracking-tighter text-right flex-shrink-0">
-                      <SplitText text="IS" delay={0.1} />
-                      <br />
-                      <span className="text-muted-foreground">
-                        <SplitText text="THIS" delay={0.2} />
-                      </span>
-                      <br />
-                      <SplitText text="?JULIAN" delay={0.3} />
-                    </h3>
-                  </div>
-
-                  {/* STACK & FOCUS info */}
                   <div className="flex justify-end gap-16">
                     <ScrollReveal delay={0.4} yOffset={15} className="space-y-2 max-w-xs text-right" dir="ltr">
                       <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">
@@ -164,7 +136,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Footer - Desktop */}
+        {/* Footer */}
         <div className="fixed bottom-0 left-0 right-0 py-6 px-8 pointer-events-none z-10">
           <div className="flex justify-center text-xs text-muted-foreground pointer-events-auto">
             <p>© 2026 — Remotely, Yogyakarta</p>
@@ -172,44 +144,20 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ============================================= */}
-      {/* TABLET LAYOUT (MD to LG - 768px to 1279px)    */}
-      {/* ============================================= */}
+      {/* TABLET LAYOUT (MD to LG) */}
       <div className="hidden md:block xl:hidden min-h-screen pt-28 pb-32 px-8 md:px-16 lg:px-24">
         <div className="max-w-3xl lg:max-w-4xl w-full mx-auto relative">
           {/* Giant Background Text - Tablet */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-[40%] -translate-y-1/2 pointer-events-none select-none z-0 w-full flex justify-center">
+          <div className="absolute left-1/2 -translate-x-1/2 top-[40%] -translate-y-1/2 pointer-events-none select-none z-0">
             <h2 className="text-[20vw] font-black leading-none text-foreground/[0.06] whitespace-nowrap tracking-tighter">
               Y.O.L.O
             </h2>
           </div>
 
-          {/* ProfileCard - Tablet (centered) */}
-          <div className="relative z-10 flex justify-center mt-12 md:mt-16 lg:mt-20 mb-10 lg:mb-14" dir="ltr">
-            <ScrollReveal delay={0.3} yOffset={25}>
-              <ProfileCard
-                name="Fikri Julian"
-                title="Fullstack Developer"
-                handle="julian-21"
-                status="Available"
-                contactText="Contact Me"
-                avatarUrl="/julian-portrait.png"
-                showUserInfo={false}
-                enableTilt={true}
-                enableMobileTilt={false}
-                onContactClick={() => window.location.href = '/contact'}
-                behindGlowColor="rgba(255, 204, 0, 0.4)"
-                iconUrl="/fikri-julian-co-logo.svg"
-                behindGlowEnabled={true}
-                innerGradient="linear-gradient(145deg, #a0002a 0%, #ffcc0022 100%)"
-              />
-            </ScrollReveal>
-          </div>
-
           {/* Main Content */}
           <div className="relative z-10 space-y-10 lg:space-y-12 text-right" dir="rtl">
             {/* Hero Section */}
-            <div className="space-y-5 lg:space-y-6 mb-16 lg:mb-20">
+            <div className="space-y-5 lg:space-y-6 mb-16 lg:mb-20 mt-16 md:mt-20 lg:mt-24">
               <h3 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[0.85] tracking-tighter text-right" dir="ltr">
                 <SplitText text="IS" delay={0.1} />
                 <br />
@@ -222,7 +170,7 @@ export default function HomePage() {
 
               <div className="flex flex-col lg:flex-row justify-end gap-5 lg:gap-10 items-end">
                 <ScrollReveal delay={0.4} yOffset={15} className="space-y-1 max-w-xs text-right" dir="ltr">
-                  <p className="text-[0.65rem] md:text-xs uppercase tracking-wider font-bold text-muted-foreground">
+                  <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">
                     <ShinyText text="STACK" color="gold" />
                   </p>
                   <p className="text-xs md:text-sm font-light leading-relaxed text-foreground/80">
@@ -231,7 +179,7 @@ export default function HomePage() {
                 </ScrollReveal>
                 
                 <ScrollReveal delay={0.5} yOffset={15} className="space-y-1 max-w-xs text-right" dir="ltr">
-                  <p className="text-[0.65rem] md:text-xs uppercase tracking-wider font-bold text-muted-foreground">
+                  <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">
                     <ShinyText text="FOCUS" color="gold" />
                   </p>
                   <p className="text-xs md:text-sm font-light leading-relaxed text-foreground/80">
@@ -292,9 +240,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ============================================= */}
-      {/* MOBILE LAYOUT (below 768px)                    */}
-      {/* ============================================= */}
+      {/* MOBILE LAYOUT (SM and below) */}
       <div className="md:hidden min-h-screen pt-24 pb-28 px-5 sm:px-7">
         <div className="w-full max-w-lg mx-auto relative">
           {/* Giant Background Text - Mobile */}
@@ -304,34 +250,10 @@ export default function HomePage() {
             </h2>
           </div>
 
-          {/* ProfileCard - Mobile (centered, compact) */}
-          <div className="relative z-10 flex justify-center mt-10 sm:mt-12 mb-8 sm:mb-10" dir="ltr">
-            <ScrollReveal delay={0.3} yOffset={20}>
-              <div className="max-w-[260px] sm:max-w-[280px]">
-                <ProfileCard
-                  name="Fikri Julian"
-                  title="Fullstack Developer"
-                  handle="julian-21"
-                  status="Available"
-                  contactText="Contact Me"
-                  avatarUrl="/julian-portrait.png"
-                  showUserInfo={false}
-                  enableTilt={false}
-                  enableMobileTilt={false}
-                  onContactClick={() => window.location.href = '/contact'}
-                  behindGlowColor="rgba(255, 204, 0, 0.4)"
-                  iconUrl="/fikri-julian-co-logo.svg"
-                  behindGlowEnabled={true}
-                  innerGradient="linear-gradient(145deg, #a0002a 0%, #ffcc0022 100%)"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
-
           {/* Main Content */}
           <div className="relative z-10 space-y-8 sm:space-y-10 text-right" dir="rtl">
             {/* Hero Section */}
-            <div className="space-y-5 sm:space-y-6 mb-10 sm:mb-12">
+            <div className="space-y-5 sm:space-y-6 mb-10 sm:mb-12 mt-16 sm:mt-16">
               <h3 className="text-[12vw] sm:text-[10vw] font-black leading-[0.85] tracking-tighter text-right" dir="ltr">
                 <SplitText text="IS" delay={0.1} />
                 <br />
