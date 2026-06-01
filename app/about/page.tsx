@@ -88,7 +88,7 @@ export default function AboutPage() {
                   enableMobileTilt={false}
                   onContactClick={() => window.location.href = '/contact'}
                   behindGlowColor="rgba(255, 204, 0, 0.4)"
-                  iconUrl="/placeholder-logo.svg"
+                  iconUrl="/fikri-julian-co-logo.svg"
                   behindGlowEnabled={true}
                   innerGradient="linear-gradient(145deg, #a0002a 0%, #ffcc0033 100%)"
                 />

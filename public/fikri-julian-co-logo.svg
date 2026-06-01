@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <style>
+    .brutal-text {
+      font-family: 'Impact', 'Arial Black', 'Montserrat', sans-serif;
+      font-weight: 900;
+      fill: #ffffff;
+      text-anchor: middle;
+      text-transform: uppercase;
+    }
+  </style>
+  <text x="80" y="45" font-size="28" class="brutal-text" letter-spacing="-1">FIKRI</text>
+  <text x="80" y="85" font-size="28" class="brutal-text" letter-spacing="-1">JULIAN</text>
+  <text x="80" y="125" font-size="28" class="brutal-text" letter-spacing="-1">CO.</text>
+</svg>
