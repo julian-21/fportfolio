@@ -8,6 +8,7 @@ import { Magnet } from '@/components/react-bits/Magnet'
 import { SpotlightCard } from '@/components/react-bits/SpotlightCard'
 import { Particles } from '@/components/react-bits/Particles'
 import { ScrollReveal } from '@/components/react-bits/ScrollReveal'
+import { TiltedCard } from '@/components/react-bits/TiltedCard'
 
 export default function ProjectsPage() {
   const projects = [
@@ -106,25 +107,27 @@ export default function ProjectsPage() {
                   <article className="group">
                     <SpotlightCard className="p-4 sm:p-6 md:p-8 border-foreground/25 bg-card/10 rounded-lg hover:border-accent/40 transition-all duration-500">
                       
-                      {/* Project Image */}
-                      <div className="relative overflow-hidden aspect-video sm:aspect-[16/10] lg:aspect-[21/9] mb-4 sm:mb-5 md:mb-6 lg:mb-8 bg-card/50 border border-foreground/20 group-hover:border-accent/30 transition-all duration-500">
-                        <img
-                          src={project.image || "/api/placeholder/1200/600"}
-                          alt={project.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        />
-                        {project.link && (
-                          <a
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="absolute top-4 right-4 p-2 sm:p-3 bg-accent text-accent-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:scale-110 transform"
-                            aria-label="Visit project"
-                          >
-                            <ExternalLink size={20} className="sm:w-6 sm:h-6" />
-                          </a>
-                        )}
-                      </div>
+                      {/* Project Image wrapped in 3D TiltedCard */}
+                      <TiltedCard maxRotation={8} className="mb-4 sm:mb-5 md:mb-6 lg:mb-8 shadow-xl">
+                        <div className="relative overflow-hidden aspect-video sm:aspect-[16/10] lg:aspect-[21/9] bg-card/50 border border-foreground/20 group-hover:border-accent/30 transition-all duration-500 rounded-md">
+                          <img
+                            src={project.image || "/api/placeholder/1200/600"}
+                            alt={project.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                          {project.link && (
+                            <a
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="absolute top-4 right-4 p-2 sm:p-3 bg-accent text-accent-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:scale-110 transform"
+                              aria-label="Visit project"
+                            >
+                              <ExternalLink size={20} className="sm:w-6 sm:h-6" />
+                            </a>
+                          )}
+                        </div>
+                      </TiltedCard>
 
                       {/* Project Info */}
                       <div className="space-y-3 sm:space-y-4 md:space-y-5">

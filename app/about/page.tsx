@@ -7,6 +7,7 @@ import { Magnet } from '@/components/react-bits/Magnet'
 import { SpotlightCard } from '@/components/react-bits/SpotlightCard'
 import { Particles } from '@/components/react-bits/Particles'
 import { ScrollReveal } from '@/components/react-bits/ScrollReveal'
+import { TiltedCard } from '@/components/react-bits/TiltedCard'
 
 export default function AboutPage() {
   const skills = {
@@ -52,29 +53,48 @@ export default function AboutPage() {
       <div className="pt-24 lg:pt-32 px-4 md:px-8 lg:pl-72 lg:pr-32 pb-20 min-h-screen">
         <div className="max-w-2xl lg:max-w-3xl space-y-12 lg:space-y-16">
           
-          {/* Header Title & Intro */}
-          <section className="space-y-3 lg:space-y-4">
+          {/* Header Title & Intro with Profile Image */}
+          <section className="space-y-6">
             <h1 className="text-4xl lg:text-6xl font-black text-foreground">
               <SplitText text="ABOUT ME" delay={0.1} />
             </h1>
-            <ScrollReveal delay={0.25} yOffset={20} className="space-y-3 lg:space-y-4 text-base lg:text-lg font-light text-foreground/80 leading-relaxed">
-              <p>
-                As a Computer Science graduate from Amikom University Yogyakarta, I am a passionate Full-Stack Developer specializing in building scalable web architectures and robust digital products.
-              </p>
-              <p>
-                Through hands-on experience developing integrated ERP systems, AI-powered platforms, and enterprise applications—ranging from React & Laravel to Java Spring Boot & Vue.js—I bridge the gap between high-performance backend logic and pixel-perfect user experiences.
-              </p>
-              <p>
-                Driven by code integrity and continuous innovation, I thrive in translating complex business workflows into seamless, high-impact web applications. Let’s connect and build something extraordinary!
-              </p>
-            </ScrollReveal>
+            
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+              {/* Text description */}
+              <ScrollReveal delay={0.2} yOffset={20} className="md:col-span-7 space-y-3 lg:space-y-4 text-base lg:text-lg font-light text-foreground/80 leading-relaxed">
+                <p>
+                  As a Computer Science graduate from Amikom University Yogyakarta, I am a passionate Full-Stack Developer specializing in building scalable web architectures and robust digital products.
+                </p>
+                <p>
+                  Through hands-on experience developing integrated ERP systems, AI-powered platforms, and enterprise applications—ranging from React & Laravel to Java Spring Boot & Vue.js—I bridge the gap between high-performance backend logic and pixel-perfect user experiences.
+                </p>
+                <p>
+                  Driven by code integrity and continuous innovation, I thrive in translating complex business workflows into seamless, high-impact web applications. Let’s connect and build something extraordinary!
+                </p>
+              </ScrollReveal>
+              
+              {/* Profile Image wrapped in 3D TiltedCard */}
+              <ScrollReveal delay={0.3} yOffset={20} className="md:col-span-5 max-w-sm mx-auto md:mx-0 w-full">
+                <TiltedCard maxRotation={15} scaleOnHover={1.05} className="shadow-2xl">
+                  <div className="relative overflow-hidden aspect-[3/4] bg-card/20 border-2 border-foreground/30 rounded-lg group">
+                    <img 
+                      src="/julian-portrait.jpg" 
+                      alt="Fikri Julian Portrait" 
+                      className="w-full h-full object-cover filter contrast-[1.05] brightness-[1.02]"
+                    />
+                    {/* Subtle shading overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent pointer-events-none" />
+                  </div>
+                </TiltedCard>
+              </ScrollReveal>
+            </div>
           </section>
 
           {/* Skills Grid with Spotlight Hover Effects */}
           <ScrollReveal delay={0.1} yOffset={25} className="space-y-4 lg:space-y-6 py-6 lg:py-8 border-t border-b border-foreground">
             <h2 className="text-xs uppercase font-bold tracking-widest text-muted-foreground">Skills & Tools</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {Object.entries(skills).map(([category, items], idx) => (
+              {Object.entries(skills).map(([category, items]) => (
                 <SpotlightCard 
                   key={category} 
                   className="p-5 border-foreground/30 bg-card/10 h-full rounded"

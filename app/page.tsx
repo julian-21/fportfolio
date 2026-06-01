@@ -59,7 +59,7 @@ export default function HomePage() {
               <div className="relative z-10 space-y-16 text-right" dir="rtl">
                 {/* Hero Section */}
                 <div className="space-y-8 mb-32 mt-20">
-                  <h3 className="text-7xl xl:text-8xl 2xl:text-9xl font-black leading-[0.85] tracking-tighter">
+                  <h3 className="text-7xl xl:text-8xl 2xl:text-9xl font-black leading-[0.85] tracking-tighter text-right" dir="ltr">
                     <SplitText text="IS" delay={0.1} />
                     <br />
                     <span className="text-muted-foreground">
@@ -157,7 +157,7 @@ export default function HomePage() {
               <div className="relative z-10 space-y-10 lg:space-y-12 text-right" dir="rtl">
                 {/* Hero Section */}
                 <div className="space-y-5 lg:space-y-6 mb-16 lg:mb-20 mt-16 md:mt-20 lg:mt-24">
-                  <h3 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[0.85] tracking-tighter">
+                  <h3 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[0.85] tracking-tighter text-right" dir="ltr">
                     <SplitText text="IS" delay={0.1} />
                     <br />
                     <span className="text-muted-foreground">
@@ -253,7 +253,7 @@ export default function HomePage() {
               <div className="relative z-10 space-y-8 sm:space-y-10 text-right" dir="rtl">
                 {/* Hero Section */}
                 <div className="space-y-5 sm:space-y-6 mb-10 sm:mb-12 mt-16 sm:mt-16">
-                  <h3 className="text-[11vw] sm:text-[9vw] font-black leading-[0.85] tracking-tighter">
+                  <h3 className="text-[11vw] sm:text-[9vw] font-black leading-[0.85] tracking-tighter text-right" dir="ltr">
                     <SplitText text="IS" delay={0.1} />
                     <br />
                     <span className="text-muted-foreground">

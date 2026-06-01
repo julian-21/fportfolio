@@ -39,11 +39,15 @@ export function SplitText({
     hidden: { 
       opacity: 0, 
       y: '30%',
+      filter: 'blur(8px)',
+      scale: 0.9,
     },
     visible: { 
       opacity: 1, 
       y: '0%',
-      transition: { type: 'spring', damping: 15, stiffness: 200, duration }
+      filter: 'blur(0px)',
+      scale: 1,
+      transition: { type: 'spring', damping: 18, stiffness: 150, duration }
     },
   } as const
 
