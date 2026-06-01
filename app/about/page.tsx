@@ -8,7 +8,7 @@ import { SpotlightCard } from '@/components/react-bits/SpotlightCard'
 import { Particles } from '@/components/react-bits/Particles'
 import { ScrollReveal } from '@/components/react-bits/ScrollReveal'
 import { TiltedCard } from '@/components/react-bits/TiltedCard'
-import { ProfileCard } from '@/components/react-bits/ProfileCard'
+import ProfileCard from '@/components/ProfileCard'
 
 export default function AboutPage() {
   const skills = {

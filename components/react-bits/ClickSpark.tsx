@@ -6,7 +6,7 @@ export function ClickSpark() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   
   useEffect(() => {
-    // Disable on touch screens to protect mobile scrolling performance
+    // Disable on touch devices to avoid interference with mobile behaviors
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
     if (isTouchDevice) return
 
@@ -29,37 +29,42 @@ export function ClickSpark() {
     resizeCanvas()
     window.addEventListener('resize', resizeCanvas)
 
-    interface Spark {
+    interface Ripple {
       x: number
       y: number
-      vx: number
-      vy: number
-      size: number
+      radius: number
+      maxRadius: number
       alpha: number
       color: string
+      speed: number
     }
 
-    let sparks: Spark[] = []
+    let ripples: Ripple[] = []
 
-    const createSparks = (x: number, y: number) => {
-      const count = 5 + Math.floor(Math.random() * 4) // Reduced count (5-8 sparks)
-      for (let i = 0; i < count; i++) {
-        const angle = Math.random() * Math.PI * 2
-        const speed = 1.0 + Math.random() * 1.5 // Slower speed
-        sparks.push({
-          x,
-          y,
-          vx: Math.cos(angle) * speed,
-          vy: Math.sin(angle) * speed,
-          size: 1.0 + Math.random() * 1.0, // Smaller sparks (1.0 - 2.0px)
-          alpha: 1,
-          color: '255, 204, 0'
-        })
-      }
+    const createRipple = (x: number, y: number) => {
+      // Spawn two concentric ripples for a more premium effect
+      ripples.push({
+        x,
+        y,
+        radius: 2,
+        maxRadius: 36,
+        alpha: 0.6,
+        color: '255, 204, 0', // Gold color to match theme
+        speed: 1.8
+      })
+      ripples.push({
+        x,
+        y,
+        radius: 0,
+        maxRadius: 24,
+        alpha: 0.3,
+        color: '255, 204, 0',
+        speed: 1.4
+      })
     }
 
     const handleClick = (e: MouseEvent) => {
-      createSparks(e.clientX, e.clientY)
+      createRipple(e.clientX, e.clientY)
     }
 
     window.addEventListener('click', handleClick)
@@ -69,23 +74,25 @@ export function ClickSpark() {
     const draw = () => {
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
 
-      sparks.forEach((s, idx) => {
-        s.x += s.vx
-        s.y += s.vy
-        s.vy += 0.05 // Gravity vector pull
-        s.alpha -= 0.045 // Fades out much faster for a snappy feel
-        s.size *= 0.95 // Size decay
+      for (let i = ripples.length - 1; i >= 0; i--) {
+        const r = ripples[i]
+        r.radius += r.speed
+        
+        // Progress from 0 to 1
+        const progress = r.radius / r.maxRadius
+        r.alpha = (progress < 0.1 ? progress * 10 : 1 - progress) * (r.alpha) // smooth ease in and fade out
 
-        if (s.alpha <= 0 || s.size <= 0.2) {
-          sparks.splice(idx, 1)
-          return
+        if (r.radius >= r.maxRadius || r.alpha <= 0) {
+          ripples.splice(i, 1)
+          continue
         }
 
         ctx.beginPath()
-        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(${s.color}, ${s.alpha})`
-        ctx.fill()
-      })
+        ctx.arc(r.x, r.y, r.radius, 0, Math.PI * 2)
+        ctx.strokeStyle = `rgba(${r.color}, ${r.alpha})`
+        ctx.lineWidth = 1.5 * (1 - progress)
+        ctx.stroke()
+      }
 
       animationFrameId = requestAnimationFrame(draw)
     }
