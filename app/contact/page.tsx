@@ -78,18 +78,18 @@ export default function ContactPage() {
 
             <div className="space-y-3 md:space-y-4">
               <p className="text-xs uppercase font-bold tracking-widest text-muted-foreground">Follow Me</p>
-              <div className="space-y-2 lg:space-y-3">
-                <Magnet range={35} strength={0.25} className="block">
+              <div className="flex flex-col gap-3 lg:gap-4 items-start">
+                <Magnet range={35} strength={0.25}>
                   <a href="https://github.com/julian-21" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-foreground hover:text-accent transition-colors font-light text-sm lg:text-base">
                     <Github size={16} /> GitHub
                   </a>
                 </Magnet>
-                <Magnet range={35} strength={0.25} className="block">
+                <Magnet range={35} strength={0.25}>
                   <a href="https://www.linkedin.com/in/fikri-julian-febrianto-69a185253/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-foreground hover:text-accent transition-colors font-light text-sm lg:text-base">
                     <Linkedin size={16} /> LinkedIn
                   </a>
                 </Magnet>
-                <Magnet range={35} strength={0.25} className="block">
+                <Magnet range={35} strength={0.25}>
                   <a href="https://www.instagram.com/fikrijuliann_/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-foreground hover:text-accent transition-colors font-light text-sm lg:text-base">
                     <Instagram size={16} /> Instagram
                   </a>
