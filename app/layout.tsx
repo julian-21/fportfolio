@@ -17,8 +17,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-scroll-behavior="smooth">
-      <body className={geist.className}>
-        {children}
+      <body className={`${geist.className} relative min-h-screen overflow-x-hidden`}>
+        {/* Ambient Glowing Orbs Background */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+          <div className="absolute top-[10%] left-[5%] w-[45vw] h-[45vw] rounded-full bg-accent/5 blur-[120px] animate-float-orb-1"></div>
+          <div className="absolute bottom-[15%] right-[5%] w-[50vw] h-[50vw] rounded-full bg-foreground/3 blur-[140px] animate-float-orb-2"></div>
+        </div>
+
+        {/* Content Layer */}
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   )

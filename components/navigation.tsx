@@ -63,13 +63,13 @@ export function Navigation() {
         {/* Right Middle - Social Links */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 space-y-6 xl:space-y-8 pointer-events-auto">
           <a
-            href="https://twitter.com"
+            href="https://www.instagram.com/fikrijuliann_/"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
           >
             <span className="text-muted-foreground text-[10px]">03</span><br />
-            Twitter
+            Instagram
           </a>
           <a
             href="https://github.com/julian-21"
@@ -154,12 +154,12 @@ export function Navigation() {
             {/* Right Side - Social Links */}
             <div className="flex gap-5 lg:gap-7 items-center">
               <a
-                href="https://twitter.com"
+                href="https://www.instagram.com/fikrijuliann_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:scale-110"
               >
-                TW
+                IG
               </a>
               <a
                 href="https://github.com/julian-21"
@@ -268,12 +268,12 @@ export function Navigation() {
                   
                   <div className="flex gap-5 sm:gap-6 text-sm sm:text-base">
                     <a
-                      href="https://twitter.com"
+                      href="https://www.instagram.com/fikrijuliann_/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-accent font-bold uppercase tracking-wider transition-all duration-300 hover:scale-110"
                     >
-                      Twitter
+                      Instagram
                     </a>
                     <a
                       href="https://github.com/julian-21"

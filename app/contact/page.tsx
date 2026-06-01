@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
-import { Mail, MapPin, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail, MapPin, Github, Linkedin, Instagram } from 'lucide-react'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -72,8 +72,8 @@ export default function ContactPage() {
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors font-light text-sm lg:text-base">
                   <Linkedin size={16} /> LinkedIn
                 </a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors font-light text-sm lg:text-base">
-                  <Twitter size={16} /> Twitter
+                <a href="https://www.instagram.com/fikrijuliann_/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground hover:text-accent transition-colors font-light text-sm lg:text-base">
+                  <Instagram size={16} /> Instagram
                 </a>
               </div>
             </div>
