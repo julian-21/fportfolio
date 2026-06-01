@@ -578,3 +578,41 @@
 .animate-float-orb-2 {
   animation: float-orb-2 20s infinite ease-in-out;
 }
+
+/* Shiny Text Shimmer Animations */
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shiny-text-gold {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 204, 0, 0.4) 30%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 204, 0, 0.4) 70%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s infinite linear;
+}
+
+.shiny-text-white {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4) 30%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgba(255, 255, 255, 0.4) 70%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s infinite linear;
+}

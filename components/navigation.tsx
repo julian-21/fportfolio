@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
+import { Magnet } from '@/components/react-bits/Magnet'
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -24,11 +25,13 @@ export function Navigation() {
       <div className="hidden xl:block fixed inset-0 pointer-events-none z-40">
         {/* Top Left - Logo */}
         <div className="absolute left-8 top-8 pointer-events-auto">
-          <Link href="/" className="group block">
-            <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-black leading-tight transition-opacity duration-300 group-hover:opacity-60">
-              FIKRI<br />JULIAN<br />CO.
-            </h1>
-          </Link>
+          <Magnet range={60} strength={0.25}>
+            <Link href="/" className="group block">
+              <h1 className="text-2xl xl:text-3xl 2xl:text-4xl font-black leading-tight transition-opacity duration-300 group-hover:opacity-60">
+                FIKRI<br />JULIAN<br />CO.
+              </h1>
+            </Link>
+          </Magnet>
         </div>
 
         {/* Bottom Left - Info */}
@@ -48,47 +51,54 @@ export function Navigation() {
         {/* Top Center - Main Navigation */}
         <nav className="absolute left-1/2 top-8 -translate-x-1/2 flex gap-8 xl:gap-12 2xl:gap-16 pointer-events-auto">
           {navItems.map((item) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              className={`text-xs xl:text-sm font-black uppercase tracking-wider transition-colors duration-300 ${
-                isActive(item.path) ? 'text-accent' : 'hover:text-accent'
-              }`}
-            >
-              <span className="text-muted-foreground">{item.number}</span> {item.label}
-            </Link>
+            <Magnet key={item.path} range={45} strength={0.3}>
+              <Link
+                href={item.path}
+                className={`text-xs xl:text-sm font-black uppercase tracking-wider transition-colors duration-300 ${
+                  isActive(item.path) ? 'text-accent' : 'hover:text-accent'
+                }`}
+              >
+                <span className="text-muted-foreground">{item.number}</span> {item.label}
+              </Link>
+            </Magnet>
           ))}
         </nav>
 
         {/* Right Middle - Social Links */}
         <div className="absolute right-8 top-1/2 -translate-y-1/2 space-y-6 xl:space-y-8 pointer-events-auto">
-          <a
-            href="https://www.instagram.com/fikrijuliann_/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
-          >
-            <span className="text-muted-foreground text-[10px]">03</span><br />
-            Instagram
-          </a>
-          <a
-            href="https://github.com/julian-21"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
-          >
-            <span className="text-muted-foreground text-[10px]">04</span><br />
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/fikri-julian-febrianto-69a185253/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
-          >
-            <span className="text-muted-foreground text-[10px]">05</span><br />
-            LinkedIn
-          </a>
+          <Magnet range={45} strength={0.3} className="block w-full">
+            <a
+              href="https://www.instagram.com/fikrijuliann_/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
+            >
+              <span className="text-muted-foreground text-[10px]">03</span><br />
+              Instagram
+            </a>
+          </Magnet>
+          <Magnet range={45} strength={0.3} className="block w-full">
+            <a
+              href="https://github.com/julian-21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
+            >
+              <span className="text-muted-foreground text-[10px]">04</span><br />
+              GitHub
+            </a>
+          </Magnet>
+          <Magnet range={45} strength={0.3} className="block w-full">
+            <a
+              href="https://www.linkedin.com/in/fikri-julian-febrianto-69a185253/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
+            >
+              <span className="text-muted-foreground text-[10px]">05</span><br />
+              LinkedIn
+            </a>
+          </Magnet>
         </div>
 
         {/* Bottom Right - Credit */}
@@ -106,25 +116,28 @@ export function Navigation() {
         <div className="absolute top-0 left-0 right-0 h-24 pointer-events-auto bg-background/90 backdrop-blur-md border-b border-foreground/10">
           <div className="h-full px-6 lg:px-8 flex items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="group block">
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-black leading-[0.9] transition-opacity duration-300 group-hover:opacity-60">
-                FIKRI<br />JULIAN<br />CO.
-              </h1>
-            </Link>
+            <Magnet range={50} strength={0.25}>
+              <Link href="/" className="group block">
+                <h1 className="text-xl md:text-2xl lg:text-3xl font-black leading-[0.9] transition-opacity duration-300 group-hover:opacity-60">
+                  FIKRI<br />JULIAN<br />CO.
+                </h1>
+              </Link>
+            </Magnet>
 
             {/* Navigation */}
             <nav className="flex gap-6 lg:gap-8">
               {navItems.map((item) => (
-                <Link
-                  key={item.path}
-                  href={item.path}
-                  className={`text-xs lg:text-sm font-black uppercase tracking-wider transition-all duration-300 hover:scale-110 ${
-                    isActive(item.path) ? 'text-accent' : 'hover:text-accent'
-                  }`}
-                >
-                  <span className="text-muted-foreground hidden lg:inline">{item.number} </span>
-                  {item.label}
-                </Link>
+                <Magnet key={item.path} range={40} strength={0.35}>
+                  <Link
+                    href={item.path}
+                    className={`text-xs lg:text-sm font-black uppercase tracking-wider transition-all duration-300 hover:scale-110 ${
+                      isActive(item.path) ? 'text-accent' : 'hover:text-accent'
+                    }`}
+                  >
+                    <span className="text-muted-foreground hidden lg:inline">{item.number} </span>
+                    {item.label}
+                  </Link>
+                </Magnet>
               ))}
             </nav>
           </div>
@@ -153,30 +166,36 @@ export function Navigation() {
 
             {/* Right Side - Social Links */}
             <div className="flex gap-5 lg:gap-7 items-center">
-              <a
-                href="https://www.instagram.com/fikrijuliann_/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:scale-110"
-              >
-                IG
-              </a>
-              <a
-                href="https://github.com/julian-21"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:scale-110"
-              >
-                GH
-              </a>
-              <a
-                href="https://www.linkedin.com/in/fikri-julian-febrianto-69a185253/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:scale-110"
-              >
-                LI
-              </a>
+              <Magnet range={35} strength={0.3}>
+                <a
+                  href="https://www.instagram.com/fikrijuliann_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:scale-110"
+                >
+                  IG
+                </a>
+              </Magnet>
+              <Magnet range={35} strength={0.3}>
+                <a
+                  href="https://github.com/julian-21"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:scale-110"
+                >
+                  GH
+                </a>
+              </Magnet>
+              <Magnet range={35} strength={0.3}>
+                <a
+                  href="https://www.linkedin.com/in/fikri-julian-febrianto-69a185253/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold uppercase tracking-wider hover:text-accent transition-all duration-300 hover:scale-110"
+                >
+                  LI
+                </a>
+              </Magnet>
             </div>
           </div>
         </div>

@@ -2,6 +2,11 @@
 
 import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
+import { SplitText } from '@/components/react-bits/SplitText'
+import { Magnet } from '@/components/react-bits/Magnet'
+import { SpotlightCard } from '@/components/react-bits/SpotlightCard'
+import { Particles } from '@/components/react-bits/Particles'
+import { ScrollReveal } from '@/components/react-bits/ScrollReveal'
 
 export default function AboutPage() {
   const skills = {
@@ -38,14 +43,21 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="w-full min-h-screen bg-background">
+    <div className="w-full min-h-screen bg-background relative overflow-hidden">
+      {/* Background Particles backdrop */}
+      <Particles quantity={60} />
+
       <Navigation />
 
       <div className="pt-24 lg:pt-32 px-4 md:px-8 lg:pl-72 lg:pr-32 pb-20 min-h-screen">
         <div className="max-w-2xl lg:max-w-3xl space-y-12 lg:space-y-16">
+          
+          {/* Header Title & Intro */}
           <section className="space-y-3 lg:space-y-4">
-            <h1 className="text-4xl lg:text-6xl font-black text-foreground">ABOUT ME</h1>
-            <div className="space-y-3 lg:space-y-4 text-base lg:text-lg font-light text-foreground/80 leading-relaxed">
+            <h1 className="text-4xl lg:text-6xl font-black text-foreground">
+              <SplitText text="ABOUT ME" delay={0.1} />
+            </h1>
+            <ScrollReveal delay={0.25} yOffset={20} className="space-y-3 lg:space-y-4 text-base lg:text-lg font-light text-foreground/80 leading-relaxed">
               <p>
                 As a Computer Science graduate from Amikom University Yogyakarta, I am a passionate Full-Stack Developer specializing in building scalable web architectures and robust digital products.
               </p>
@@ -55,32 +67,47 @@ export default function AboutPage() {
               <p>
                 Driven by code integrity and continuous innovation, I thrive in translating complex business workflows into seamless, high-impact web applications. Let’s connect and build something extraordinary!
               </p>
-            </div>
+            </ScrollReveal>
           </section>
 
-          <section className="space-y-4 lg:space-y-6 py-6 lg:py-8 border-t border-b border-foreground">
+          {/* Skills Grid with Spotlight Hover Effects */}
+          <ScrollReveal delay={0.1} yOffset={25} className="space-y-4 lg:space-y-6 py-6 lg:py-8 border-t border-b border-foreground">
             <h2 className="text-xs uppercase font-bold tracking-widest text-muted-foreground">Skills & Tools</h2>
-            <div className="space-y-3 lg:space-y-4">
-              {Object.entries(skills).map(([category, items]) => (
-                <div key={category}>
-                  <h3 className="font-bold text-foreground mb-2 text-sm lg:text-base">{category}</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {Object.entries(skills).map(([category, items], idx) => (
+                <SpotlightCard 
+                  key={category} 
+                  className="p-5 border-foreground/30 bg-card/10 h-full rounded"
+                >
+                  <h3 className="font-bold text-foreground mb-3 text-sm lg:text-base border-b border-foreground/20 pb-2">
+                    {category}
+                  </h3>
                   <div className="flex flex-wrap gap-2">
                     {items.map((skill) => (
-                      <span key={skill} className="text-xs font-light px-2.5 lg:px-3 py-0.5 lg:py-1 border border-foreground text-foreground/70">
+                      <span 
+                        key={skill} 
+                        className="text-xs font-light px-2.5 lg:px-3 py-0.5 lg:py-1 border border-foreground/40 text-foreground/85 bg-background/25 hover:border-accent hover:text-accent hover:scale-105 transition-all duration-300"
+                      >
                         {skill}
                       </span>
                     ))}
                   </div>
-                </div>
+                </SpotlightCard>
               ))}
             </div>
-          </section>
+          </ScrollReveal>
 
+          {/* Experience Section */}
           <section className="space-y-4 lg:space-y-6">
             <h2 className="text-xs uppercase font-bold tracking-widest text-muted-foreground">Experience</h2>
             <div className="space-y-4 lg:space-y-6">
               {experience.map((exp, idx) => (
-                <div key={idx} className="pb-4 lg:pb-6 border-b border-foreground/30 last:border-0">
+                <ScrollReveal 
+                  key={idx} 
+                  delay={idx * 0.08}
+                  yOffset={20}
+                  className="pb-4 lg:pb-6 border-b border-foreground/30 last:border-0"
+                >
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 lg:gap-2 mb-1 lg:mb-2">
                     <h3 className="text-base lg:text-lg font-bold text-foreground">{exp.title}</h3>
                     <span className="text-xs font-bold tracking-widest text-muted-foreground whitespace-nowrap">
@@ -89,22 +116,25 @@ export default function AboutPage() {
                   </div>
                   <p className="text-sm lg:text-base text-foreground/70 font-light mb-1 lg:mb-2">{exp.company}</p>
                   <p className="text-xs lg:text-sm text-foreground/60 font-light">{exp.description}</p>
-                </div>
+                </ScrollReveal>
               ))}
             </div>
           </section>
 
-          <section className="pt-6 lg:pt-8 border-t border-foreground">
+          {/* CTA Section */}
+          <ScrollReveal className="pt-6 lg:pt-8 border-t border-foreground">
             <p className="text-sm lg:text-base text-foreground/70 font-light mb-4 lg:mb-6">
               Siap untuk memulai proyek baru?
             </p>
-            <Link 
-              href="/contact"
-              className="inline-block px-6 lg:px-8 py-2 lg:py-3 bg-foreground text-background font-black uppercase text-xs tracking-widest hover:bg-accent hover:text-foreground transition-all"
-            >
-              Start a Project
-            </Link>
-          </section>
+            <Magnet range={50} strength={0.3}>
+              <Link 
+                href="/contact"
+                className="inline-block px-6 lg:px-8 py-2 lg:py-3 bg-foreground text-background font-black uppercase text-xs tracking-widest hover:bg-accent hover:text-foreground transition-all duration-300"
+              >
+                Start a Project
+              </Link>
+            </Magnet>
+          </ScrollReveal>
         </div>
       </div>
     </div>

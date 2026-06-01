@@ -65,7 +65,8 @@ export async function POST(request: NextRequest) {
       title,
       description,
       image,
-      tags
+      tags,
+      links: { live: '', github: '' }
     }
 
     projects.push(newProject)

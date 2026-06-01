@@ -1,6 +1,10 @@
 'use client'
 
 import { Navigation } from '@/components/navigation'
+import { SplitText } from '@/components/react-bits/SplitText'
+import { SpotlightCard } from '@/components/react-bits/SpotlightCard'
+import { Particles } from '@/components/react-bits/Particles'
+import { ScrollReveal } from '@/components/react-bits/ScrollReveal'
 
 const experiences = [
   {
@@ -35,18 +39,23 @@ const experiences = [
 
 export default function ExperiencePage() {
   return (
-    <div className="w-full min-h-screen bg-background">
+    <div className="w-full min-h-screen bg-background relative overflow-hidden">
+      {/* Background Particles backdrop */}
+      <Particles quantity={65} />
+
       <Navigation />
 
       {/* Hero Section */}
       <section className="pt-24 lg:pt-32 px-4 md:px-8 lg:pl-72 lg:pr-32 pb-10 container-custom">
-        <div className="max-w-2xl slide-up space-y-6">
+        <div className="max-w-2xl space-y-6">
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-light text-foreground text-balance leading-tight">
-            Pengalaman Kerja
+            <SplitText text="Pengalaman Kerja" delay={0.1} />
           </h1>
-          <p className="text-base md:text-xl text-foreground/70 font-light leading-relaxed max-w-xl">
-            Perjalanan profesional saya meliputi berbagai peran dan tanggung jawab yang telah membentuk keahlian saya sebagai fullstack developer.
-          </p>
+          <ScrollReveal delay={0.3} yOffset={15}>
+            <p className="text-base md:text-xl text-foreground/70 font-light leading-relaxed max-w-xl">
+              Perjalanan profesional saya meliputi berbagai peran dan tanggung jawab yang telah membentuk keahlian saya sebagai fullstack developer.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -56,39 +65,42 @@ export default function ExperiencePage() {
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="group border-l-2 border-foreground pl-8 pb-8 last:pb-0 slide-up relative"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="group border-l-2 border-foreground pl-8 pb-8 last:pb-0 relative"
             >
               {/* Timeline Dot */}
-              <div className="absolute w-4 h-4 rounded-full bg-foreground -left-2.5 top-1.5 border-4 border-background group-hover:scale-110 transition-transform" />
+              <div className="absolute w-4 h-4 rounded-full bg-foreground -left-[9px] top-[26px] border-4 border-background group-hover:scale-125 transition-transform duration-300 z-10" />
 
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <h3 className="text-2xl md:text-3xl font-light text-foreground">
-                    {exp.role}
-                  </h3>
-                  <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 text-sm">
-                    <p className="text-primary font-light">{exp.company}</p>
-                    <span className="hidden md:block text-border">•</span>
-                    <p className="text-muted-foreground font-light">{exp.period}</p>
+              <ScrollReveal delay={index * 0.1} yOffset={25}>
+                <SpotlightCard className="p-6 md:p-8 border-foreground/20 bg-card/15 rounded-md hover:border-accent/40 transition-all duration-500">
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <h3 className="text-2xl md:text-3xl font-light text-foreground group-hover:text-accent transition-colors duration-300">
+                        {exp.role}
+                      </h3>
+                      <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 text-sm">
+                        <p className="text-accent font-bold uppercase tracking-wider">{exp.company}</p>
+                        <span className="hidden md:block text-muted-foreground">•</span>
+                        <p className="text-muted-foreground font-light">{exp.period}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-foreground/75 leading-relaxed font-light max-w-2xl text-sm md:text-base">
+                      {exp.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {exp.highlights.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] md:text-xs uppercase tracking-wider text-muted-foreground border border-foreground/35 px-3 py-1 rounded-full font-light bg-background/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-
-                <p className="text-foreground/75 leading-relaxed font-light max-w-2xl">
-                  {exp.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 pt-4">
-                  {exp.highlights.map((tag) => (
-                    <span
-                      key={tag}
-                      className="text-xs uppercase tracking-wider text-muted-foreground border border-foreground/50 px-3 py-1.5 rounded-full font-light"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+                </SpotlightCard>
+              </ScrollReveal>
             </div>
           ))}
         </div>
