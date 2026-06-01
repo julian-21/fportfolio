@@ -46,28 +46,6 @@ export default function HomePage() {
 
       {/* DESKTOP LAYOUT (XL and above) */}
       <div className="hidden xl:block min-h-screen">
-        {/* Fixed ProfileCard on the left side - Desktop */}
-        <div className="fixed left-28 2xl:left-36 top-1/2 -translate-y-1/2 z-20">
-          <ScrollReveal delay={0.6} yOffset={30}>
-            <ProfileCard
-              name="Fikri Julian"
-              title="Fullstack Developer"
-              handle="julian-21"
-              status="Available"
-              contactText="Contact Me"
-              avatarUrl="/julian-portrait.png"
-              showUserInfo={true}
-              enableTilt={true}
-              enableMobileTilt={false}
-              onContactClick={() => window.location.href = '/contact'}
-              behindGlowColor="rgba(255, 204, 0, 0.4)"
-              iconUrl="/fikri-julian-co-logo.svg"
-              behindGlowEnabled={true}
-              innerGradient="linear-gradient(145deg, #a0002a 0%, #ffcc0022 100%)"
-            />
-          </ScrollReveal>
-        </div>
-
         <div className="min-h-screen flex items-center justify-end pr-32 pl-64">
           <div className="max-w-4xl w-full">
             <div className="relative">
@@ -76,6 +54,28 @@ export default function HomePage() {
                 <h2 className="text-[20vw] font-black leading-none text-foreground/5 whitespace-nowrap tracking-tighter">
                   Y.O.L.O
                 </h2>
+              </div>
+
+              {/* ProfileCard floating on the left side of content */}
+              <div className="absolute -left-[340px] 2xl:-left-[380px] top-1/2 -translate-y-1/2 z-10">
+                <ScrollReveal delay={0.6} yOffset={30}>
+                  <ProfileCard
+                    name="Fikri Julian"
+                    title="Fullstack Developer"
+                    handle="julian-21"
+                    status="Available"
+                    contactText="Contact Me"
+                    avatarUrl="/julian-portrait.png"
+                    showUserInfo={false}
+                    enableTilt={true}
+                    enableMobileTilt={false}
+                    onContactClick={() => window.location.href = '/contact'}
+                    behindGlowColor="rgba(255, 204, 0, 0.4)"
+                    iconUrl="/fikri-julian-co-logo.svg"
+                    behindGlowEnabled={true}
+                    innerGradient="linear-gradient(145deg, #a0002a 0%, #ffcc0022 100%)"
+                  />
+                </ScrollReveal>
               </div>
 
               {/* Main Content */}
