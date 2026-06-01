@@ -45,15 +45,15 @@ export default function AboutPage() {
         <div className="max-w-2xl lg:max-w-3xl space-y-12 lg:space-y-16">
           <section className="space-y-3 lg:space-y-4">
             <h1 className="text-4xl lg:text-6xl font-black text-foreground">ABOUT ME</h1>
-            <div className="space-y-2 lg:space-y-3 text-base lg:text-lg font-light text-foreground/80 leading-relaxed">
+            <div className="space-y-3 lg:space-y-4 text-base lg:text-lg font-light text-foreground/80 leading-relaxed">
               <p>
-                Saya adalah Fullstack Web Developer dengan spesialisasi dalam Laravel & MySQL, 
-                yang bersemangat dalam menciptakan solusi web yang inovatif dan user-friendly.
+                As a Computer Science graduate from Amikom University Yogyakarta, I am a passionate Full-Stack Developer specializing in building scalable web architectures and robust digital products.
               </p>
               <p>
-                Dengan pengalaman di berbagai proyek enterprise dan aplikasi komersial, 
-                saya menggabungkan pemahaman mendalam tentang backend logic dengan 
-                attention to detail dalam user interface design.
+                Through hands-on experience developing integrated ERP systems, AI-powered platforms, and enterprise applications—ranging from React & Laravel to Java Spring Boot & Vue.js—I bridge the gap between high-performance backend logic and pixel-perfect user experiences.
+              </p>
+              <p>
+                Driven by code integrity and continuous innovation, I thrive in translating complex business workflows into seamless, high-impact web applications. Let’s connect and build something extraordinary!
               </p>
             </div>
           </section>

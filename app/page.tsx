@@ -61,16 +61,16 @@ export default function HomePage() {
 
                   <div className="flex justify-end gap-16">
                     <div className="space-y-2 max-w-xs text-right" dir="ltr">
-                      <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">SC13</p>
-                      <p className="text-sm font-light leading-relaxed">
-                        Partnering with agencies and brands that value design and development integrity.
+                      <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">STACK</p>
+                      <p className="text-sm font-light leading-relaxed text-foreground/80">
+                        Building modern, scalable web architectures using Laravel, React, Vue.js, and Java Spring Boot.
                       </p>
                     </div>
                     
                     <div className="space-y-2 max-w-xs text-right" dir="ltr">
-                      <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">ONLY</p>
-                      <p className="text-sm font-light leading-relaxed">
-                        Delivering highly executed front-end experiences with attention to detail.
+                      <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">FOCUS</p>
+                      <p className="text-sm font-light leading-relaxed text-foreground/80">
+                        Fusing robust backend workflows with pixel-perfect frontend experiences to drive operational efficiency.
                       </p>
                     </div>
                   </div>
@@ -150,16 +150,16 @@ export default function HomePage() {
 
                   <div className="flex flex-col lg:flex-row justify-end gap-5 lg:gap-10 items-end">
                     <div className="space-y-1 max-w-xs text-right" dir="ltr">
-                      <p className="text-[0.6rem] md:text-[0.65rem] uppercase tracking-wider font-bold text-muted-foreground">SC13</p>
-                      <p className="text-[0.7rem] md:text-xs font-light leading-relaxed">
-                        Partnering with agencies and brands that value design and development integrity.
+                      <p className="text-[0.6rem] md:text-[0.65rem] uppercase tracking-wider font-bold text-muted-foreground">STACK</p>
+                      <p className="text-[0.7rem] md:text-xs font-light leading-relaxed text-foreground/80">
+                        Building modern, scalable web architectures using Laravel, React, Vue.js, and Java Spring Boot.
                       </p>
                     </div>
                     
                     <div className="space-y-1 max-w-xs text-right" dir="ltr">
-                      <p className="text-[0.6rem] md:text-[0.65rem] uppercase tracking-wider font-bold text-muted-foreground">ONLY</p>
-                      <p className="text-[0.7rem] md:text-xs font-light leading-relaxed">
-                        Delivering highly executed front-end experiences with attention to detail.
+                      <p className="text-[0.6rem] md:text-[0.65rem] uppercase tracking-wider font-bold text-muted-foreground">FOCUS</p>
+                      <p className="text-[0.7rem] md:text-xs font-light leading-relaxed text-foreground/80">
+                        Fusing robust backend workflows with pixel-perfect frontend experiences to drive operational efficiency.
                       </p>
                     </div>
                   </div>
@@ -237,16 +237,16 @@ export default function HomePage() {
 
                   <div className="flex flex-col gap-4 sm:gap-5 items-end" dir="ltr">
                     <div className="space-y-0.5 max-w-xs text-right">
-                      <p className="text-[0.55rem] sm:text-[0.6rem] uppercase tracking-wider font-bold text-muted-foreground">SC13</p>
-                      <p className="text-[0.65rem] sm:text-[0.7rem] font-light leading-relaxed">
-                        Partnering with agencies and brands that value design and development integrity.
+                      <p className="text-[0.55rem] sm:text-[0.6rem] uppercase tracking-wider font-bold text-muted-foreground">STACK</p>
+                      <p className="text-[0.65rem] sm:text-[0.7rem] font-light leading-relaxed text-foreground/80">
+                        Building modern, scalable web architectures using Laravel, React, Vue.js, and Java Spring Boot.
                       </p>
                     </div>
                     
                     <div className="space-y-0.5 max-w-xs text-right">
-                      <p className="text-[0.55rem] sm:text-[0.6rem] uppercase tracking-wider font-bold text-muted-foreground">ONLY</p>
-                      <p className="text-[0.65rem] sm:text-[0.7rem] font-light leading-relaxed">
-                        Delivering highly executed front-end experiences with attention to detail.
+                      <p className="text-[0.55rem] sm:text-[0.6rem] uppercase tracking-wider font-bold text-muted-foreground">FOCUS</p>
+                      <p className="text-[0.65rem] sm:text-[0.7rem] font-light leading-relaxed text-foreground/80">
+                        Fusing robust backend workflows with pixel-perfect frontend experiences to drive operational efficiency.
                       </p>
                     </div>
                   </div>
