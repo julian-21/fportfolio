@@ -12,22 +12,28 @@ export default function AboutPage() {
 
   const experience = [
     {
-      title: 'Junior Developer',
-      company: 'CV. Ardatama Indonesia',
-      period: '2024 - Present',
-      description: 'Mengembangkan aplikasi enterprise dengan Java Spring Boot dan Vue.js'
+      title: 'IT Support Specialist (Contract)',
+      company: 'Rumah Mesin',
+      period: 'Des 2025 - Present',
+      description: 'Mengembangkan sistem ERP yang disesuaikan dengan proses bisnis perusahaan, menganalisis alur kerja untuk solusi digital terintegrasi, serta mengelola pemeliharaan, troubleshooting, dan optimasi performa sistem.'
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Internship at BKN',
-      period: '2023 - 2024',
-      description: 'Membangun sistem manajemen data internal dengan Laravel dan MySQL'
+      title: 'Junior Developer',
+      company: 'CV. Ardatama Indonesia',
+      period: '2025 - Present',
+      description: 'Mengembangkan aplikasi enterprise dengan Java Spring Boot dan Vue.js.'
+    },
+    {
+      title: 'Web Developer (Internship)',
+      company: 'Kantor Regional I BKN',
+      period: 'Sep - Des 2023',
+      description: 'Mengembangkan website layanan konsultasi dan coaching clinic menggunakan Laravel dan PHP, merancang diagram alur database, serta membuat desain website.'
     },
     {
       title: 'Web Developer',
       company: 'Freelance',
       period: '2022 - 2023',
-      description: 'Mengembangkan various web projects dan desktop applications'
+      description: 'Mengembangkan various web projects dan desktop applications.'
     }
   ]
 

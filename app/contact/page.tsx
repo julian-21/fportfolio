@@ -59,7 +59,7 @@ export default function ContactPage() {
               </div>
               <div className="space-y-2 pt-2 md:pt-4">
                 <p className="text-xs uppercase font-bold tracking-widest text-muted-foreground">Location</p>
-                <p className="text-foreground font-light text-base lg:text-lg">Bandung, Indonesia</p>
+                <p className="text-foreground font-light text-base lg:text-lg">Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
               </div>
             </div>
 

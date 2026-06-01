@@ -7,6 +7,23 @@ import { ArrowUpRight, ExternalLink } from 'lucide-react'
 export default function ProjectsPage() {
   const projects = [
     {
+      title: 'ERP System Rumah Mesin',
+      description: 'Pengembangan sistem Enterprise Resource Planning (ERP) terintegrasi untuk modul Sales, PPIC, dan HR.',
+      fullDescription: 'Proyek pengembangan sistem ERP komprehensif yang disesuaikan dengan alur kerja operasional Rumah Mesin. Menghubungkan proses operasional penjualan (Sales), perencanaan produksi dan kontrol inventaris (PPIC), serta manajemen sumber daya manusia (HR) ke dalam satu platform digital terpadu.',
+      image: '/erp-system-development.jpg',
+      tags: ['Laravel', 'React', 'MySQL', 'ERP', 'System Development'],
+      year: 'Feb 2026 - Present',
+      link: null,
+      company: 'Rumah Mesin',
+      features: [
+        'Developing and implementing Sales, PPIC (Production Planning and Inventory Control), and HR modules within the ERP system',
+        'Designing integrated business workflows to connect sales operations, production planning, inventory management, and human resource processes',
+        'Translating operational requirements into scalable ERP features aligned with company business processes',
+        'Collaborating with internal teams to optimize workflow efficiency and improve data integration across departments',
+        'Conducting system maintenance, feature enhancement, and continuous improvement to support operational scalability and digital transformation'
+      ],
+    },
+    {
       title: 'VirtueOne',
       description: 'Platform pendaftaran konsultasi dan coaching clinic gratis yang dilaksanakan secara virtual untuk ASN dan non-ASN.',
       fullDescription: 'Sistem manajemen pendaftaran online di Kantor Regional I BKN dengan fitur lengkap untuk booking konsultasi dan coaching clinic, dilengkapi interface yang user-friendly dan sistem pengelolaan data yang efisien.',
@@ -28,7 +45,7 @@ export default function ProjectsPage() {
       fullDescription: 'Platform komprehensif dengan integrasi payment gateway Midtrans, sistem pembayaran otomatis (bank transfer, QRIS, GoPay), pengelolaan backend/frontend untuk transaksi seamless, notifikasi real-time, dan deployment via FileZilla.',
       image: '/turbo-ai-platform.jpg',
       tags: ['Laravel', 'MySQL', 'jQuery', 'Midtrans', 'Payment Gateway', 'AI Integration'],
-      year: '2024',
+      year: 'Jan 2025',
       link: 'http://turboai.id/',
       features: [
         'Integrasi Payment Gateway Midtrans dengan callback & validasi transaksi',

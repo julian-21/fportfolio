@@ -4,6 +4,13 @@ import { Navigation } from '@/components/navigation'
 
 const experiences = [
   {
+    role: 'Information Technology Support Specialist (Contract)',
+    company: 'Rumah Mesin',
+    period: 'Dec 2025 - Present',
+    description: 'Mengembangkan sistem ERP yang disesuaikan dengan proses bisnis dan kebutuhan operasional perusahaan. Menganalisis alur kerja bisnis untuk diintegrasikan ke dalam solusi digital berbasis ERP, serta melakukan maintenance, troubleshooting, dan optimasi performa sistem.',
+    highlights: ['ERP Systems', 'Workflow Analysis', 'System Optimization', 'Troubleshooting']
+  },
+  {
     role: 'Fullstack Developer',
     company: 'Ardatama',
     period: '2025 - Present',
@@ -13,16 +20,16 @@ const experiences = [
   {
     role: 'Freelance Developer',
     company: 'Turbo AI',
-    period: '2024',
+    period: 'Jan 2025',
     description: 'Memimpin pengembangan penuh aplikasi Turbo AI menggunakan Laravel dan Blade. Menangani semua aspek dari database design, backend logic, hingga frontend implementation dengan timeline yang ketat.',
     highlights: ['Laravel', 'MySQL', 'Blade Template', 'API Development', 'Full Cycle']
   },
   {
-    role: 'Magang Programmer',
-    company: 'BKN (Badan Kepegawaian Negara)',
-    period: '2023',
-    description: 'Berkontribusi pada pengembangan aplikasi VirtueOne untuk manajemen data internal. Mengimplementasikan fitur-fitur kritis menggunakan Laravel, MySQL, dan best practices development.',
-    highlights: ['Laravel', 'MySQL', 'Problem Solving', 'Team Collaboration', 'VirtueOne Project']
+    role: 'Web Developer (Internship)',
+    company: 'Kantor Regional I BKN',
+    period: 'Sept - Dec 2023',
+    description: 'Membangun website layanan konsultasi dan coaching clinic (VirtueOne) menggunakan PHP dan Laravel. Merancang database flowchart, website design, serta banner promosi website. Tautan: https://virtuone.kupjogja.id/',
+    highlights: ['Laravel', 'PHP', 'Database Flowchart', 'Web Design', 'VirtueOne Project']
   },
 ]
 

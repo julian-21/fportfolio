@@ -6,14 +6,14 @@ import { Navigation } from '@/components/navigation'
 export default function HomePage() {
   const projects = [
     { 
-      name: 'VIRTUE ONE', 
-      year: '2023', 
-      description: 'Laravel Web Application',
-      tags: ['Laravel', 'MySQL', 'Bootstrap']
+      name: 'ERP SYSTEM', 
+      year: '2026', 
+      description: 'Enterprise Resource Planning',
+      tags: ['React', 'Laravel', 'ERP']
     },
     { 
       name: 'TURBO AI', 
-      year: '2024', 
+      year: '2025', 
       description: 'AI-Powered Platform',
       tags: ['Node.js', 'React', 'AI']
     },
@@ -22,6 +22,12 @@ export default function HomePage() {
       year: '2025', 
       description: 'Enterprise Application',
       tags: ['Java', 'Spring', 'PostgreSQL']
+    },
+    { 
+      name: 'VIRTUE ONE', 
+      year: '2023', 
+      description: 'Laravel Web Application',
+      tags: ['Laravel', 'MySQL', 'Bootstrap']
     },
   ]
 
