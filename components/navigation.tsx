@@ -102,8 +102,8 @@ export function Navigation() {
 
       {/* TABLET LAYOUT (MD to LG - 768px to 1279px) */}
       <div className="hidden md:block xl:hidden fixed inset-0 pointer-events-none z-40">
-        {/* Top Bar - Transparent */}
-        <div className="absolute top-0 left-0 right-0 h-24 pointer-events-auto">
+        {/* Top Bar - Glassmorphism */}
+        <div className="absolute top-0 left-0 right-0 h-24 pointer-events-auto bg-background/90 backdrop-blur-md border-b border-foreground/10">
           <div className="h-full px-6 lg:px-8 flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="group block">
@@ -130,8 +130,8 @@ export function Navigation() {
           </div>
         </div>
 
-        {/* Bottom Info Bar - Transparent */}
-        <div className="absolute bottom-0 left-0 right-0 pointer-events-auto">
+        {/* Bottom Info Bar - Glassmorphism */}
+        <div className="absolute bottom-0 left-0 right-0 pointer-events-auto bg-background/90 backdrop-blur-md border-t border-foreground/10">
           <div className="px-6 lg:px-8 py-5 flex flex-wrap items-center justify-between gap-4 text-xs lg:text-sm">
             {/* Left Side - Info */}
             <div className="flex gap-6 lg:gap-8 items-center">
@@ -183,7 +183,7 @@ export function Navigation() {
       </div>
 
       {/* MOBILE LAYOUT (SM and below - under 768px) */}
-      <div className="md:hidden fixed top-0 left-0 right-0 h-20 sm:h-24 z-50 flex items-center justify-between px-5 sm:px-6">
+      <div className={`md:hidden fixed top-0 left-0 right-0 h-20 sm:h-24 z-50 flex items-center justify-between px-5 sm:px-6 transition-all duration-300 ${mobileMenuOpen ? 'bg-transparent' : 'bg-background/90 backdrop-blur-md border-b border-foreground/10'}`}>
         {/* Logo */}
         <Link href="/" className="text-base sm:text-lg font-black leading-[0.9] hover:text-accent transition-colors">
           FIKRI<br />JULIAN

@@ -1,5 +1,7 @@
 'use client'
 
+import { Navigation } from '@/components/navigation'
+
 const experiences = [
   {
     role: 'Fullstack Developer',
@@ -26,30 +28,32 @@ const experiences = [
 
 export default function ExperiencePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="w-full min-h-screen bg-background">
+      <Navigation />
+
       {/* Hero Section */}
-      <section className="pt-40 pb-20 md:pt-48 md:pb-32 container-custom">
+      <section className="pt-24 lg:pt-32 px-4 md:px-8 lg:pl-72 lg:pr-32 pb-10 container-custom">
         <div className="max-w-2xl slide-up space-y-6">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-foreground text-balance leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-light text-foreground text-balance leading-tight">
             Pengalaman Kerja
           </h1>
-          <p className="text-lg md:text-xl text-foreground/70 font-light leading-relaxed max-w-xl">
+          <p className="text-base md:text-xl text-foreground/70 font-light leading-relaxed max-w-xl">
             Perjalanan profesional saya meliputi berbagai peran dan tanggung jawab yang telah membentuk keahlian saya sebagai fullstack developer.
           </p>
         </div>
       </section>
 
       {/* Timeline */}
-      <section className="pb-32 container-custom">
-        <div className="max-w-3xl mx-auto space-y-8">
+      <section className="px-4 md:px-8 lg:pl-72 lg:pr-32 pb-32 container-custom">
+        <div className="max-w-3xl space-y-8">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="group border-l-2 border-foreground pl-8 pb-8 last:pb-0 slide-up"
+              className="group border-l-2 border-foreground pl-8 pb-8 last:pb-0 slide-up relative"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Timeline Dot */}
-              <div className="absolute w-4 h-4 rounded-full bg-foreground -left-2.5 top-0 border-4 border-background group-hover:scale-110 transition-transform" />
+              <div className="absolute w-4 h-4 rounded-full bg-foreground -left-2.5 top-1.5 border-4 border-background group-hover:scale-110 transition-transform" />
 
               <div className="space-y-4">
                 <div className="space-y-2">

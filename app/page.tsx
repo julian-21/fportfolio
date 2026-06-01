@@ -181,7 +181,7 @@ export default function HomePage() {
                           <span className="text-[0.65rem] md:text-xs text-muted-foreground whitespace-nowrap">
                             {project.year}
                           </span>
-                          <h2 className="text-[12vh] md:text-[14vh] lg:text-[16vh] font-black leading-none text-foreground group-hover:text-accent transition-colors duration-500">
+                          <h2 className="text-[10vw] md:text-[8vw] lg:text-[7vw] font-black leading-none text-foreground group-hover:text-accent transition-colors duration-500">
                             {project.name}
                           </h2>
                         </div>
@@ -274,8 +274,8 @@ export default function HomePage() {
                           </span>
                           <h2 className={`font-black leading-none text-foreground group-hover:text-accent transition-colors duration-500 ${
                             project.name.length > 10 
-                              ? 'text-[8.5vh] sm:text-[9.5vh]' 
-                              : 'text-[9.5vh] sm:text-[10.5vh]'
+                              ? 'text-[10vw] sm:text-[8vw]' 
+                              : 'text-[12vw] sm:text-[10vw]'
                           }`}>
                             {project.name}
                           </h2>
