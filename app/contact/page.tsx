@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
 import { Mail, MapPin, Github, Linkedin, Instagram } from 'lucide-react'
-import { SplitText } from '@/components/react-bits/SplitText'
+import { BlurText } from '@/components/react-bits/BlurText'
 import { Magnet } from '@/components/react-bits/Magnet'
 import { Particles } from '@/components/react-bits/Particles'
 import { ScrollReveal } from '@/components/react-bits/ScrollReveal'
@@ -51,7 +51,7 @@ export default function ContactPage() {
         <div className="max-w-2xl lg:max-w-3xl space-y-12 lg:space-y-16">
           <div>
             <h1 className="text-4xl lg:text-6xl font-black text-foreground mb-3 lg:mb-4">
-              <SplitText text="GET IN TOUCH" delay={0.1} />
+              <BlurText text="GET IN TOUCH" delay={0.05} animateBy="letters" className="inline-block" />
             </h1>
             <ScrollReveal delay={0.25} yOffset={15}>
               <p className="text-base lg:text-lg font-light text-foreground/70">

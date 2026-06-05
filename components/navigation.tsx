@@ -73,7 +73,7 @@ export function Navigation() {
               rel="noopener noreferrer"
               className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
             >
-              <span className="text-muted-foreground text-[10px]">03</span><br />
+              <span className="text-muted-foreground text-[10px]">05</span><br />
               Instagram
             </a>
           </Magnet>
@@ -84,7 +84,7 @@ export function Navigation() {
               rel="noopener noreferrer"
               className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
             >
-              <span className="text-muted-foreground text-[10px]">04</span><br />
+              <span className="text-muted-foreground text-[10px]">06</span><br />
               GitHub
             </a>
           </Magnet>
@@ -95,7 +95,7 @@ export function Navigation() {
               rel="noopener noreferrer"
               className="block text-xs xl:text-sm font-bold uppercase tracking-wider hover:text-accent transition-colors text-right"
             >
-              <span className="text-muted-foreground text-[10px]">05</span><br />
+              <span className="text-muted-foreground text-[10px]">07</span><br />
               LinkedIn
             </a>
           </Magnet>

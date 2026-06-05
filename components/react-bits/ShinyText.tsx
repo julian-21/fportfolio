@@ -3,7 +3,7 @@
 interface ShinyTextProps {
   text: string
   className?: string
-  color?: 'gold' | 'white'
+  color?: 'gold' | 'white' | 'red'
 }
 
 export function ShinyText({
@@ -11,7 +11,12 @@ export function ShinyText({
   className = '',
   color = 'gold'
 }: ShinyTextProps) {
-  const shineClass = color === 'gold' ? 'shiny-text-gold' : 'shiny-text-white'
+  const shineClass = 
+    color === 'gold' 
+      ? 'shiny-text-gold' 
+      : color === 'red' 
+        ? 'shiny-text-red' 
+        : 'shiny-text-white'
   
   return (
     <span className={`${shineClass} inline-block ${className}`}>

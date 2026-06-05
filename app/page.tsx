@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Navigation } from '@/components/navigation'
-import { SplitText } from '@/components/react-bits/SplitText'
+import { BlurText } from '@/components/react-bits/BlurText'
 import { Magnet } from '@/components/react-bits/Magnet'
 import { ShinyText } from '@/components/react-bits/ShinyText'
 import { Particles } from '@/components/react-bits/Particles'
@@ -47,7 +47,7 @@ export default function HomePage() {
       <div className="hidden xl:block min-h-screen">
         {/* Giant Background Text - Y.O.L.O */}
         <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none z-0">
-          <h2 className="text-[22vw] font-black leading-none text-foreground/[0.07] whitespace-nowrap tracking-tighter">
+          <h2 className="text-[20vw] font-black leading-none text-foreground/[0.06] whitespace-nowrap tracking-tight">
             Y.O.L.O
           </h2>
         </div>
@@ -61,19 +61,19 @@ export default function HomePage() {
                 {/* Hero Section */}
                 <div className="space-y-8 mb-32 mt-20">
                   <h3 className="text-7xl xl:text-8xl 2xl:text-9xl font-black leading-[0.85] tracking-tighter text-right" dir="ltr">
-                    <SplitText text="IS" delay={0.1} />
+                    <BlurText text="IS" delay={0.05} animateBy="letters" className="inline-block" />
                     <br />
-                    <span className="text-muted-foreground">
-                      <SplitText text="THIS" delay={0.2} />
+                    <span>
+                      <ShinyText text="THIS" color="red" />
                     </span>
                     <br />
-                    <SplitText text="?JULIAN" delay={0.3} />
+                    <BlurText text="JULIAN?" delay={0.05} animateBy="letters" className="inline-block" />
                   </h3>
 
                   <div className="flex justify-end gap-16">
                     <ScrollReveal delay={0.4} yOffset={15} className="space-y-2 max-w-xs text-right" dir="ltr">
                       <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">
-                        <ShinyText text="STACK" color="gold" />
+                        <ShinyText text="STACK" color="red" />
                       </p>
                       <p className="text-sm font-light leading-relaxed text-foreground/80">
                         Building modern, scalable web architectures using Laravel, React, Vue.js, and Java Spring Boot.
@@ -82,7 +82,7 @@ export default function HomePage() {
                     
                     <ScrollReveal delay={0.5} yOffset={15} className="space-y-2 max-w-xs text-right" dir="ltr">
                       <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">
-                        <ShinyText text="FOCUS" color="gold" />
+                        <ShinyText text="FOCUS" color="red" />
                       </p>
                       <p className="text-sm font-light leading-relaxed text-foreground/80">
                         Fusing robust backend workflows with pixel-perfect frontend experiences to drive operational efficiency.
@@ -149,7 +149,7 @@ export default function HomePage() {
         <div className="max-w-3xl lg:max-w-4xl w-full mx-auto relative">
           {/* Giant Background Text - Tablet */}
           <div className="absolute left-1/2 -translate-x-1/2 top-[40%] -translate-y-1/2 pointer-events-none select-none z-0">
-            <h2 className="text-[20vw] font-black leading-none text-foreground/[0.06] whitespace-nowrap tracking-tighter">
+            <h2 className="text-[18vw] font-black leading-none text-foreground/[0.05] whitespace-nowrap tracking-tight">
               Y.O.L.O
             </h2>
           </div>
@@ -159,19 +159,19 @@ export default function HomePage() {
             {/* Hero Section */}
             <div className="space-y-5 lg:space-y-6 mb-16 lg:mb-20 mt-16 md:mt-20 lg:mt-24">
               <h3 className="text-5xl md:text-6xl lg:text-7xl font-black leading-[0.85] tracking-tighter text-right" dir="ltr">
-                <SplitText text="IS" delay={0.1} />
+                <BlurText text="IS" delay={0.05} animateBy="letters" className="inline-block" />
                 <br />
-                <span className="text-muted-foreground">
-                  <SplitText text="THIS" delay={0.2} />
+                <span>
+                  <ShinyText text="THIS" color="red" />
                 </span>
                 <br />
-                <SplitText text="?JULIAN" delay={0.3} />
+                <BlurText text="JULIAN?" delay={0.05} animateBy="letters" className="inline-block" />
               </h3>
 
               <div className="flex flex-col lg:flex-row justify-end gap-5 lg:gap-10 items-end">
                 <ScrollReveal delay={0.4} yOffset={15} className="space-y-1 max-w-xs text-right" dir="ltr">
                   <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">
-                    <ShinyText text="STACK" color="gold" />
+                    <ShinyText text="STACK" color="red" />
                   </p>
                   <p className="text-xs md:text-sm font-light leading-relaxed text-foreground/80">
                     Building modern, scalable web architectures using Laravel, React, Vue.js, and Java Spring Boot.
@@ -180,7 +180,7 @@ export default function HomePage() {
                 
                 <ScrollReveal delay={0.5} yOffset={15} className="space-y-1 max-w-xs text-right" dir="ltr">
                   <p className="text-xs uppercase tracking-wider font-bold text-muted-foreground">
-                    <ShinyText text="FOCUS" color="gold" />
+                    <ShinyText text="FOCUS" color="red" />
                   </p>
                   <p className="text-xs md:text-sm font-light leading-relaxed text-foreground/80">
                     Fusing robust backend workflows with pixel-perfect frontend experiences to drive operational efficiency.
@@ -244,8 +244,8 @@ export default function HomePage() {
       <div className="md:hidden min-h-screen pt-24 pb-28 px-5 sm:px-7">
         <div className="w-full max-w-lg mx-auto relative">
           {/* Giant Background Text - Mobile */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-[35%] -translate-y-1/2 pointer-events-none select-none z-0">
-            <h2 className="text-[26vw] font-black leading-none text-foreground/[0.06] whitespace-nowrap tracking-tighter">
+          <div className="absolute left-1/2 -translate-x-1/2 top-[38%] -translate-y-1/2 pointer-events-none select-none z-0 overflow-hidden w-screen">
+            <h2 className="text-[30vw] font-black leading-none text-foreground/[0.06] whitespace-nowrap tracking-tighter text-center">
               Y.O.L.O
             </h2>
           </div>
@@ -255,19 +255,19 @@ export default function HomePage() {
             {/* Hero Section */}
             <div className="space-y-5 sm:space-y-6 mb-10 sm:mb-12 mt-16 sm:mt-16">
               <h3 className="text-[12vw] sm:text-[10vw] font-black leading-[0.85] tracking-tighter text-right" dir="ltr">
-                <SplitText text="IS" delay={0.1} />
+                <BlurText text="IS" delay={0.05} animateBy="letters" className="inline-block" />
                 <br />
-                <span className="text-muted-foreground">
-                  <SplitText text="THIS" delay={0.2} />
+                <span>
+                  <ShinyText text="THIS" color="red" />
                 </span>
                 <br />
-                <SplitText text="?JULIAN" delay={0.3} />
+                <BlurText text="JULIAN?" delay={0.05} animateBy="letters" className="inline-block" />
               </h3>
 
               <div className="flex flex-col gap-4 sm:gap-5 items-end" dir="ltr">
                 <ScrollReveal delay={0.4} yOffset={10} className="space-y-0.5 max-w-xs text-right">
                   <p className="text-[0.6rem] sm:text-xs uppercase tracking-wider font-bold text-muted-foreground">
-                    <ShinyText text="STACK" color="gold" />
+                    <ShinyText text="STACK" color="red" />
                   </p>
                   <p className="text-[0.7rem] sm:text-xs font-light leading-relaxed text-foreground/80">
                     Building modern, scalable web architectures using Laravel, React, Vue.js, and Java Spring Boot.
@@ -276,7 +276,7 @@ export default function HomePage() {
                 
                 <ScrollReveal delay={0.5} yOffset={10} className="space-y-0.5 max-w-xs text-right">
                   <p className="text-[0.6rem] sm:text-xs uppercase tracking-wider font-bold text-muted-foreground">
-                    <ShinyText text="FOCUS" color="gold" />
+                    <ShinyText text="FOCUS" color="red" />
                   </p>
                   <p className="text-[0.7rem] sm:text-xs font-light leading-relaxed text-foreground/80">
                     Fusing robust backend workflows with pixel-perfect frontend experiences to drive operational efficiency.
